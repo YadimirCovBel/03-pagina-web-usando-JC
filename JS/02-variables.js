@@ -1,3 +1,5 @@
+'use strict'
+
 //Variables
 //una variable es un contenedor de informacion
 
