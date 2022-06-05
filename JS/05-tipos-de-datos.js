@@ -11,4 +11,4 @@ var cadena_texto = "hola mundo"
 var verdadero_o_falso = true;
 var numero_falso = "33";
 
-console.log(numero_falso)
+console.log(parseFloat(numero_falso)+7)
