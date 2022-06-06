@@ -27,6 +27,7 @@ Negacion !
 
 var year = 2018;
 if (year != 2016){
-console.log("la fecha no es 2016");
-
+console.log("la fecha no es 2016 realmente es "+year);
 }
+
+if(year>=200 && year <+ 2022){ console.log("estamos en la era actual");}
