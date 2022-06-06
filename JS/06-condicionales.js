@@ -17,3 +17,16 @@ console.log("ya no eres milenial")
     //es menor de edad
 console.log(nombre+"tiene "+edad+", es menor de edad")    
 }
+
+/*
+operadores logicos
+AND &&
+OR  ||
+Negacion !
+*/
+
+var year = 2018;
+if (year != 2016){
+console.log("la fecha no es 2016");
+
+}
