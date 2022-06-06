@@ -30,4 +30,6 @@ if (year != 2016){
 console.log("la fecha no es 2016 realmente es "+year);
 }
 
-if(year>=200 && year <+ 2022){ console.log("estamos en la era actual");}
+if(year >= 2000 && year <= 2022 && year != 2018){ console.log("estamos en la era actual");
+}else{console.log("estamos en la era moderna");
+}
