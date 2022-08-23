@@ -5,6 +5,7 @@ control que se repite varias veces
 */
 var numeros = 100;
 
-for(var i = 0; i > numeros; i++){
-    console.log("camos por el numero"+i)
+for(var i = 0; i <= numeros; i++){
+    console.log( "vamos por el numero:" +i);
+debugger
 }
