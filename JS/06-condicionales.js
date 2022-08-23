@@ -21,15 +21,19 @@ console.log(nombre+"tiene "+edad+", es menor de edad")
 /*
 operadores logicos
 AND &&
-OR  ||
+OR  || 
 Negacion !
 */
-
-var year = 2018;
+//negacion
+var year = 2022;
 if (year != 2016){
 console.log("la fecha no es 2016 realmente es "+year);
 }
-
-if(year >= 2000 && year <= 2022 && year != 2018){ console.log("estamos en la era actual");
+//AND
+if(year >= 2000 && year <= 2022){ console.log("estamos en la era actual");
 }else{console.log("estamos en la era moderna");
 }
+//OR
+if (year == 2008 || (year >= 2018 && year == 2028)) 
+    {console.log("la fecha termina en 8")
+}else{console.log("la fecha no esta registrada")} 
