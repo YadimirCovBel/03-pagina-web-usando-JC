@@ -9,4 +9,5 @@ var mi_resultado = confirm("estas seguro de querer continuar?");
 console.log(mi_resultado);
 
 //ingreso de datos
-prompt("que edad tienes?", 18);
+var mi_resultado_edad = prompt("que edad tienes?", 18);
+console.log(mi_resultado_edad);
