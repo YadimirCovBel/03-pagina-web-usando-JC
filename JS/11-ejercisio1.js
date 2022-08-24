@@ -3,6 +3,7 @@
 /*
 programa que pida dos numeros y que nos diga cual es mayor 
 y cual es el menor o si son iguales
+PLUS si los numeros no son un numero o son menores o iguales a 0 vuelve a pedir que los introduscamos
 */
 
 var numero_1 = parseInt(prompt("introduce el primer numero", 0))
