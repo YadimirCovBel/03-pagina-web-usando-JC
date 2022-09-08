@@ -41,7 +41,7 @@ calculadora()
 tambien se pueden meter console log dentro de la funcion para invocarla y que se ejecuten las instrucciones 
 del console log en este caso se realizaria 4 veces la funcion lanzado los dos console log señalados
 */
-
+/*
 function calculadora(){
     console.log("hola soy la calculadora")
     console.log("si soy yo")
@@ -51,6 +51,64 @@ function calculadora(){
 }
 var resultado = calculadora();
 console.log(resultado)
-/* podemos meter la funcion calculadora en una variable y ejecutarla para que con un console log se ejecute
+ 
+podemos meter la funcion calculadora en una variable y ejecutarla para que con un console log se ejecute
 el return
+*/
+
+/*
+
+PAAMETROS
+
+una funcion aparte de ejecutar instrucciones puede recibir parametros que son variables que alteran la 
+logica o el resultado que nos devolvera la funcion, de esta manera es mas reutilizable una funsion 
+
+*/
+/*
+
+function calculadora(numero_1, numero_2){
+    //se agregaron parametros 1 y 2 para que las cantidades sean ingresadas y cambien resultados
+    console.log("suma: "+ (numero_1+numero_2));
+    console.log("resta: "+ (numero_1-numero_2));
+    console.log("multiplicasion: "+ (numero_1*numero_2));
+    console.log("division: "+ (numero_1/numero_2));
+        console.log("*solo soy una separacion ********************************************************")
+    /*
+    return "hola soy la calculadora!";
+    por el momento no usaremos el return
+    */
+/*
+}
+//en la invocasion se deben poner las cantidades para numero_1 y numero_2
+calculadora(12, 8);
+calculadora(98, 2);
+ de esta forma ya da resultados diferentes incluso se pueden ingresar numeros en la terminal del navegador
+ y entregara resultados pasados por la funcion de la calculadora
+*/
+
+/*
+
+nuevo ejemplo codigo
+
+
+se puede ingresar la funcion dentro de un bucle en este caso un for
+*/
+
+function calculadora(numero_1, numero_2){
+
+    console.log("suma: "+ (numero_1+numero_2));
+    console.log("resta: "+ (numero_1-numero_2));
+    console.log("multiplicasion: "+ (numero_1*numero_2));
+    console.log("division: "+ (numero_1/numero_2));
+        console.log("*solo soy una separacion ********************************************************")
+
+    }
+
+for(var i = 1; i <= 10; i++){
+console.log(i)
+    calculadora(i, 8)
+}
+/*
+ haremos que mientras que la i sea menor a 10 se repetira la funcion, introducimos la funcion dentro del
+bucle donde 1 sera el numero_1 y 8 el numero_2
 */
