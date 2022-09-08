@@ -13,7 +13,7 @@ una funcione es una agrupacion reutilizable de un conjunto de instrucciones.
 /*
 function calculadora(){
 
-para crear una fincion se usa la palabra recerbada function seguida del nombre de la funcion yo puedo 
+para crear una funcion se usa la palabra recerbada function seguida del nombre de la funcion yo puedo 
 crearla funcion que me devuelva un texto, console log.
 
     return "hola soy la calculadora!";
