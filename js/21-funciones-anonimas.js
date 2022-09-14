@@ -25,7 +25,6 @@ console.log(sumame(3, 5));
 
 //una funcion de callback es una funcion anonima que se le pasa como parametro a otra funcion 
 
-*/
 
 
 function sumame(numero_1, numero_2, sumaYmuestra, sumaPorDos){
@@ -39,6 +38,31 @@ function sumame(numero_1, numero_2, sumaYmuestra, sumaPorDos){
 }
 
 sumame(5, 7, function(dato){
+    console.log("La suma es: ", dato)
+},
+function(dato){
+    console.log("la suma por dos es: ", (dato*2));
+
+});
+
+
+*/
+
+/*
+funciones de flecha es lo mismo que una funcion pero  en lugar de poner la palabra function se coloca una flecha.
+*/
+
+
+function sumame(numero_1, numero_2, sumaYmuestra, sumaPorDos){
+    var sumar = numero_1 + numero_2;
+
+    sumaYmuestra(sumar);
+    sumaPorDos(sumar);
+
+    return sumar; 
+}
+
+sumame(2, 4, (dato) => {
     console.log("La suma es: ", dato)
 },
 function(dato){
