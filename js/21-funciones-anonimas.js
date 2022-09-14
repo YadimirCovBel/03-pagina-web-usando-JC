@@ -62,10 +62,12 @@ function sumame(numero_1, numero_2, sumaYmuestra, sumaPorDos){
     return sumar; 
 }
 
-sumame(2, 4, dato => {
+sumame(2, 4, (dato) => {
+    // se sustitulle la palabra function por => y de esta forma ya es una funcion de call back  esto es mas eficiente
     console.log("La suma es: ", dato)
 },
 dato => {
+    // tambien puedes quitar los parentesis si son solo un dato 
     console.log("la suma por dos es: ", (dato*2));
 
 });
