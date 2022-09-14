@@ -62,10 +62,10 @@ function sumame(numero_1, numero_2, sumaYmuestra, sumaPorDos){
     return sumar; 
 }
 
-sumame(2, 4, (dato) => {
+sumame(2, 4, dato => {
     console.log("La suma es: ", dato)
 },
-function(dato){
+dato => {
     console.log("la suma por dos es: ", (dato*2));
 
 });
