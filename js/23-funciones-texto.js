@@ -97,10 +97,26 @@ console.log(busqueda)
 //reemplazar, separar y cortar texto
 
 var numero = 444
-var texto1 = "bienvenido al curso de javascrip curso"
+var texto1 = "bienvenido al curso de javascrip Aprendiendo Yadimir"
 var texto2 = "es muy buen curso"
+/*
 
 var busqueda = texto1.replace("al curso", "la clase");
-// utilizando replace(,) se introduce el texto que se busca remplazar y despues de la coma lo que se colocaria
+// utilizando replace("al curso", "la clase") se introduce el texto que se busca remplazar y despues de la coma lo que se colocaria
 
+var busqueda = texto1.slice(14,22);
+// utilizando .slice(14) te permite separar un string, cortarlo y dar como resultado un string apartir de un caracter seleccionado en este caso dejara 
+todo del caracter 14 hacia adelante y si agregamos .slice(14,22) nos dejara solo los caracteres entre 14 y 22
+
+var busqueda = texto1.split();
+// sirve para recortar la aplabra y meterla en un Array  y tener una coleccion de palabras
+
+var busqueda = texto1.split(" ");
+//si lo separo por espacios lo que hara es separar cada palabra con el INDICADOR seleccionado en esta ocasion el espacio y generara un Array con eso 
+// en este caso las separa con el indicador que pusimos dandonos como resultado una Array con 7 palabras
+
+*/
+var busqueda = texto1.trim();
+// el metodo trim lo que hace es quitar los espacios por delante y por detras que tenga el string, 
 console.log(busqueda)
+
