@@ -80,7 +80,6 @@ var busqueda = texto1.startsWith("bienvenido");
 var busqueda = texto1.endsWith("bienvenido");
 // endswith(); arroja true o false si la palabra se encuentra al final del string en este casod ara false
 console.log(busqueda)
-*/
 
 
 var numero = 444
@@ -89,5 +88,19 @@ var texto2 = "es muy buen curso"
 
 var busqueda = texto1.includes("curso");
 // includes( ) me arroja si la palabra existe en el string
+
+console.log(busqueda)
+*/
+
+
+// Transformacion de texto
+//reemplazar, separar y cortar texto
+
+var numero = 444
+var texto1 = "bienvenido al curso de javascrip curso"
+var texto2 = "es muy buen curso"
+
+var busqueda = texto1.replace("al curso", "la clase");
+// utilizando replace(,) se introduce el texto que se busca remplazar y despues de la coma lo que se colocaria
 
 console.log(busqueda)
