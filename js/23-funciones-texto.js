@@ -114,9 +114,9 @@ var busqueda = texto1.split();
 var busqueda = texto1.split(" ");
 //si lo separo por espacios lo que hara es separar cada palabra con el INDICADOR seleccionado en esta ocasion el espacio y generara un Array con eso 
 // en este caso las separa con el indicador que pusimos dandonos como resultado una Array con 7 palabras
-
 */
 var busqueda = texto1.trim();
 // el metodo trim lo que hace es quitar los espacios por delante y por detras que tenga el string, 
 console.log(busqueda)
+
 
