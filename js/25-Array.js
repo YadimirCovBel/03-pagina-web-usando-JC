@@ -43,7 +43,9 @@ var elemento = parseInt(prompt("Que elemento del Array quieres?", 0));
 
 alert(nombres[elemento]);
 // colocamos un alert que trabaje con la variable elemento y esta es a la que se le introduciera el numero y arojara una opccion del indice
-    
+
+//para impedir que el que un usuario introdusca un numero fuera de las elecciones en el indice podemos usar un if 
+
 if(elemento >= nombres.length){
 
     colocando nombres.length lo que hacemos es que el programa vea cuantas variables hay en el array en este caso 6  y toma ese numero para que elemento 
@@ -66,7 +68,6 @@ alert("El usuario seleccionado es: " + nombres[elemento]);
 
 */
 
-//para impedir que el que un usuario introdusca un numero fuera de las elecciones en el indice podemos usar un if 
 
 /*
 para que nos arroje todos los elementos de un Array  por pantalla
