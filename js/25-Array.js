@@ -36,20 +36,19 @@ var lenguajes = new Array("PHP", "JS", "Go", "Java");
 
 //console.log(nombres.length);
 // ccuando usamos .length aplicado a un Array lo que hace es mostrar la cantidad de elementos en el mismo en vez de la cantidad de caracteres. 
+/*
 
 var elemento = parseInt(prompt("Que elemento del Array quieres?", 0));
 //para poder sacar un elemento espesifico del indice del array se usa un prompt con el cual se escoge el numero que se ocupa segun el numero del indice  
 
-/*
 alert(nombres[elemento]);
 // colocamos un alert que trabaje con la variable elemento y esta es a la que se le introduciera el numero y arojara una opccion del indice
-*/
     
 if(elemento >= nombres.length){
-/* 
-colocando nombres.length lo que hacemos es que el programa vea cuantas variables hay en el array en este caso 6  y toma ese numero para que elemento 
+
+    colocando nombres.length lo que hacemos es que el programa vea cuantas variables hay en el array en este caso 6  y toma ese numero para que elemento 
 no sea mayor o igual a ese
-*/
+
 alert("Introdusca un numero correcto entre las variables debe ser menor a: " + nombres.length); 
 // colocamos un alert que muestre un popup si es un numero fuera de las opcciones
 
@@ -64,4 +63,23 @@ alert("El usuario seleccionado es: " + nombres[elemento]);
     alert("El usuario seleccionado es: " + nombres[elemento]);
 
 }
-//para impedir que resolver el que un usuario introdusca un numero fuera de las elecciones en el indice podemos usar un if 
+
+*/
+
+//para impedir que el que un usuario introdusca un numero fuera de las elecciones en el indice podemos usar un if 
+
+/*
+para que nos arroje todos los elementos de un Array  por pantalla
+*/
+
+document.write("<h1>lenguaes de programacion del 2018</h1>")
+document.write("<ul>")
+// <ul> es para generar una lista sin orden
+for (var i = 0; i < lenguajes.length; i++){
+    document.write("<li>" +lenguajes[i] + "</li>")
+// la etiqueta <li> es para decalarar cada elemento que se ingresara a la lista generada </li> es para cerrar la declaracion
+
+}   
+
+document.write("</ul>");
+
