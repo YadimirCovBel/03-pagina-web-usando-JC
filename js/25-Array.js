@@ -28,11 +28,12 @@ console.log(nombres[2]);
 /* 
 array avanzados
 
-*/
 
 var nombre = "Yadimir Covarrubias"
 var nombres = ["Yadimir Covarrubias", "Yumaira Rios", "Carlos Quintero", "Paul Covarrubias", 52, true];
 var lenguajes = new Array("PHP", "JS", "Go", "Java");
+
+*/
 
 //console.log(nombres.length);
 // ccuando usamos .length aplicado a un Array lo que hace es mostrar la cantidad de elementos en el mismo en vez de la cantidad de caracteres. 
@@ -72,15 +73,33 @@ alert("El usuario seleccionado es: " + nombres[elemento]);
 /*
 para que nos arroje todos los elementos de un Array  por pantalla
 */
+/*
+document.write("<h1>lenguaes de programacion del 2018</h1>")
+document.write("<ul>")
+ <ul> es para generar una lista sin orden
+for (var i = 0; i < lenguajes.length; i++){
+    document.write("<li>" +lenguajes[i] + "</li>")
+ la etiqueta <li> es para decalarar cada elemento que se ingresara a la lista generada </li> es para cerrar la declaracion
+
+}
+*/
+
+/*
+Recorrer arrays: for, forEach
+*/
+
+var nombre = "Yadimir Covarrubias"
+var nombres = ["Yadimir Covarrubias", "Yumaira Rios", "Carlos Quintero", "Paul Covarrubias", 52, true];
+var lenguajes = new Array("PHP", "JS", "Go", "Java");
 
 document.write("<h1>lenguaes de programacion del 2018</h1>")
 document.write("<ul>")
-// <ul> es para generar una lista sin orden
-for (var i = 0; i < lenguajes.length; i++){
-    document.write("<li>" +lenguajes[i] + "</li>")
-// la etiqueta <li> es para decalarar cada elemento que se ingresara a la lista generada </li> es para cerrar la declaracion
 
-}   
+
+lenguajes.forEach(()=>){
+    document.write("<li>" +elemento + "</li>")
+
+}
 
 document.write("</ul>");
 
