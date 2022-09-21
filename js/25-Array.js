@@ -95,11 +95,28 @@ var lenguajes = new Array("PHP", "JS", "Go", "Java");
 document.write("<h1>lenguaes de programacion del 2018</h1>")
 document.write("<ul>")
 
+/*
+lenguajes.forEach((elemento, index, data)=>{
+ debo primero poner el array que se planea usar y despues agregar .forEach  con el cual tendremos una funcion de callback la cual se  indica con 
+ => paradefinirla con la flecha, esta funcion recibira varios parametros un valor o elemento, el indice o index y un valor que se llamara data
 
-lenguajes.forEach(()=>){
-    document.write("<li>" +elemento + "</li>")
+ tambien se podria generar de forma abrebiada 
+ lenguajes.forEach((elemento)=>{} 
+ con eso bastaria para que funcionara el forEach, 
 
-}
+ lenguajes.forEach((elemento, indice)=>{
+
+si yo ocupo sacar los datos del indice es decir de que indice estoy tomando los elementos entonces ocupamos agregar el segundo parametro, de esta 
+es visible que numero de dato.
+
+tambien se tiene el tercer parametro que es el arreglo. que se agrega como arr
+
+*/
+lenguajes.forEach((elemento, indice, arr)=>{
+    console.log(arr);
+    document.write("<li>"+indice+ "-" +elemento+ "</li>")
+
+});
 
 document.write("</ul>");
 
