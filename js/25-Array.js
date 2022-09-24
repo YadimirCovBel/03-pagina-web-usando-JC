@@ -109,7 +109,8 @@ lenguajes.forEach((elemento, index, data)=>{
 si yo ocupo sacar los datos del indice es decir de que indice estoy tomando los elementos entonces ocupamos agregar el segundo parametro, de esta 
 es visible que numero de dato.
 
-tambien se tiene el tercer parametro que es el arreglo. que se agrega como arr
+tambien se tiene el tercer parametro que es el arreglo. que se agrega como arr, eso se ocuapria si requirieramos el array limpio dentro del bucle, 
+el for each nos itera todo el array y lo muestra 
 
 */
 lenguajes.forEach((elemento, indice, arr)=>{
