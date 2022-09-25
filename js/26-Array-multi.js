@@ -64,6 +64,10 @@ console.log(peliculas)
 /*
 si se quiere elminar un elemento concreto de un array se nesecita hacer un index off para localizar prmiero.
 */
+
+
+
+/*
 var categorias = ['Accion', 'Terror', 'Comedoa', 'Suspenso'];
 var peliculas = ['la verdad duele', 'la vida es bella', 'gran torino'];
 
@@ -89,8 +93,10 @@ var peliculas_string = peliculas.join();
 // para convertir un array a texto o string se puede usar join() para esto se debe crear una variable la cual  se usara para este fin y despues ingresar
 // el array que se busca convertir en texto seguido por el comando join()
 console.log(peliculas_string)
+*/
 
 
+/*
 // convertir un string a un array
 
 var cadena = "tex1, tex2, tex3";
@@ -99,3 +105,18 @@ var cadena_array = cadena.split(", ")
 // se crea una variable que contendra la que contiene el texto y agregamos .split(", ") para que tome el contenido separado por esos elementos para generar
 // el array que deseamos del texto
 console.log(cadena_array)
+//con este console.log vemos que se convirtio en un array
+*/
+
+// ordenar arreglos
+
+var categorias = ['Accion', 'Terror', 'Comedoa', 'Suspenso'];
+var peliculas = ['la verdad duele', 'la vida es bella', 'gran torino'];
+
+var cine = [categorias,peliculas]
+
+//peliculas.sort();
+// .sort(); ordena el array en este caso se acomodaria de forma alfabetica 
+
+peliculas.reverse();
+console.log(peliculas)
