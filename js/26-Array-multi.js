@@ -24,11 +24,13 @@ la primera es cine y la segunda es categorias el elemento [0] seria categorias y
 y [2] seria gran torino
 
 */
+
+// sesion Operaciones con Arrays
+
 /*
 peliculas.push("batman");
 
 console.log(peliculas)
-
 
 es posible agregar un elemento al array de peliculas sin modificar directamente el Array seleccionando el array a modificar peliculas 
 agregar el .push()  y listo se agrega lo escrito en el parentesis peliculas.push("batman");
