@@ -142,3 +142,41 @@ for(let lenguaje in lenguajes){
 };
 
 document.write("</ul>");
+
+
+
+
+// Busqueda
+
+
+/*
+var busqueda = lenguajes.find(function(lenguaje){
+// se crea una variable para realizar la busqueda en este caso busqueda
+// usamos una fincion de callback
+    return lenguaje == "PHP";
+//realizara un return si encuentra el lenguaje 
+});
+
+console.log(busqueda)
+*/
+
+//una forma mas limpia de escribirlo es 
+
+var busqueda = lenguajes.find(lenguaje => lenguaje == "PHP")
+    
+    console.log(busqueda)
+
+// de esta forma nos indicara en la consola si econtro el lenguaje indicado de no encontrarlo dira undefined
+
+//tambien existe el findeIndex que permite econtrar el lugar en el indice que se encuentra el elemento a buscar
+var busqueda_index = lenguajes.findIndex(lenguaje => lenguaje == "PHP")
+    
+    console.log(busqueda_index)
+// nos arrojara en que numero del indice en el array se encuentra
+
+// otro metodo para econtrar si hay valores de algun tipo 
+var precios = [10, 20, 30, 40, 50, 60]
+var busqueda_cantidad = precios.some(precio => precio >= 40)
+// con .some podemos hacer una busqueda en cuanto a las cantidades indicadas en las espesificasiones en este caso pedimos que buscara si encuentra 
+// cantidades superiores a 40 en el array precios
+    console.log(busqueda_cantidad)
