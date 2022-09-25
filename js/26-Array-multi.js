@@ -119,4 +119,5 @@ var cine = [categorias,peliculas]
 // .sort(); ordena el array en este caso se acomodaria de forma alfabetica 
 
 peliculas.reverse();
+// con .reverse(); se pondria todo el contenido del array en forma inversa a la que fue ingresado.
 console.log(peliculas)

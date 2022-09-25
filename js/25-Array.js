@@ -86,7 +86,7 @@ for (var i = 0; i < lenguajes.length; i++){
 
 /*
 Recorrer arrays: for, forEach
-*/
+
 
 var nombre = "Yadimir Covarrubias"
 var nombres = ["Yadimir Covarrubias", "Yumaira Rios", "Carlos Quintero", "Paul Covarrubias", 52, true];
@@ -94,7 +94,7 @@ var lenguajes = new Array("PHP", "JS", "Go", "Java");
 
 document.write("<h1>lenguaes de programacion del 2018</h1>")
 document.write("<ul>")
-
+*/
 /*
 lenguajes.forEach((elemento, index, data)=>{
  debo primero poner el array que se planea usar y despues agregar .forEach  con el cual tendremos una funcion de callback la cual se  indica con 
@@ -112,7 +112,6 @@ es visible que numero de dato.
 tambien se tiene el tercer parametro que es el arreglo. que se agrega como arr, eso se ocuapria si requirieramos el array limpio dentro del bucle, 
 el for each nos itera todo el array y lo muestra 
 
-*/
 lenguajes.forEach((elemento, indice, arr)=>{
     console.log(arr);
     document.write("<li>"+indice+ "-" +elemento+ "</li>")
@@ -120,4 +119,26 @@ lenguajes.forEach((elemento, indice, arr)=>{
 });
 
 document.write("</ul>");
+*/
 
+// recorrer un array con for in
+
+var nombre = "Yadimir Covarrubias"
+var nombres = ["Yadimir Covarrubias", "Yumaira Rios", "Carlos Quintero", "Paul Covarrubias", 52, true];
+var lenguajes = new Array("PHP", "JS", "Go", "Java");
+
+document.write("<h1>lenguaes de programacion del 2018</h1>")
+document.write("<ul>")
+
+
+for(let lenguaje in lenguajes){
+    //se crea una variable dentro del for en este caso lenguaje
+    //let 
+    //in
+    document.write("<li>"+lenguajes[lenguaje]+ "</li>")
+// se realiza un document.write que utilize lenguajes y agregamos lenguaje entre corchetes de esta forma tomamos el indice de 
+// lenguajes y se utulizara en lenguaje
+
+};
+
+document.write("</ul>");
