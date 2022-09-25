@@ -39,6 +39,7 @@ agregar el .push()  y listo se agrega lo escrito en el parentesis peliculas.push
 
 var elemento = ""
 do{ 
+    //usamos un do while para que se puedan agregar elementos hasta que el usuario desida dejar de agregar.
     var elemento = prompt("Introduce tu pelicula:");
     // se puede hacer un prompt para agregar elementos a un array
     peliculas.push(elemento);
@@ -88,3 +89,10 @@ var peliculas_string = peliculas.join();
 // para convertir un array a texto o string se puede usar join() para esto se debe crear una variable la cual  se usara para este fin y despues ingresar
 // el array que se busca convertir en texto seguido por el comando join()
 console.log(peliculas_string)
+
+
+// convertir un string a un array
+
+var cadena = "tex1, tex2, tex3";
+// para esto ocupamos primero crear una variable que contenga texto
+var cadena_array = cadena.split(", ")
