@@ -96,3 +96,6 @@ console.log(peliculas_string)
 var cadena = "tex1, tex2, tex3";
 // para esto ocupamos primero crear una variable que contenga texto
 var cadena_array = cadena.split(", ")
+// se crea una variable que contendra la que contiene el texto y agregamos .split(", ") para que tome el contenido separado por esos elementos para generar
+// el array que deseamos del texto
+console.log(cadena_array)
