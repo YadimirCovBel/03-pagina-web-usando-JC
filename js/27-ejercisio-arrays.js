@@ -32,6 +32,7 @@ console.log(numeros)
 function mostrarArray(elementos, textoCustom = ""){
     //se sustitulle todo lo que se uso con numeros por la variable elementos
     // se coloca TextoCustom con valor vacio para pasarle un dato si es de interes agregarle algo
+    //textoCustom sirve para poder ingresar mas adelante un texto a la funcion cuando se aplica
     document.write("<h1>Numeros ingresados por el usuario"+textoCustom+"</h1>");
     document.write("<ul>")
     //se crea una lista sin orden
@@ -108,6 +109,7 @@ var Busqueda = parseInt(prompt("Busca un numero", 0));
 var posicion = numeros.findIndex(numero => numero == Busqueda);
 
 if(posicion && posicion != -1){
+    // el -1 indica que no hay coincidencias por eso mientras sea desigual a -1 significa que si hay coincidencias
 document.write("<h1>ENCONTRADO</h1>")
 document.write("<h1> posicion de "+Busqueda+" es "+posicion+"</h1>")
 }else{
