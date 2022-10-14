@@ -171,6 +171,11 @@ para poder buscarla
         */
 var divsRojos = document.getElementsByClassName('rojo')
 //creamos una variabl y le ingresamos document.getElementsByClassName('rojo') se deberan seleccionar todos los elementos con la clase rojo
+var divsAmarillos = document.getElementsByClassName('amarillo')
+//creamos una variabl y le ingresamos document.getElementsByClassName('amarillo') se deberan seleccionar todos los elementos con la clase amarillo
+console.log(divsAmarillos)
+divsAmarillos[0].style.background = "yellow";
+// con esto seleccionamos el elemento 0 del array y le cambiamos el background a amarillo
 var div;
 //definimos la variable div para usarlo en el bucle
 for(div in divsRojos){
@@ -182,3 +187,24 @@ if(divsRojos[div].className == "rojo"){
 }
 }
 console.log(divsRojos)
+
+// probando querry selector
+
+/* se agrego al index un id
+
+			<h1 id="encabezado">Listado de textos de los divs</h1>
+*/
+var id = document.querySelector("#encabezado")
+/* creamos la variable id para ingresar .querySelector con el cual podemos seleccionar en base al id de los elementos  aqui creamos la variable id
+para poder ver que lo detecta con el console log tambien resaltamos que se deve poner # junto a el id que se ingreso para seleccionar
+
+queryselector es recomendable para buscar 1 solo elemento espesifico
+
+*/
+console.log(id)
+
+var ClassRojo = document.querySelectorAll(".rojo")
+/*ahora lo usaremos para seleccionar un array en esta ocasion rojo para ello se usa . ya que es un class y no un id, es evidente que no 
+funciona para seleccionar arrays, para eso se deve usar .querySelectorAll(".rojo") lo cual nos muestra lo que buscamos un Array
+*/
+console.log(ClassRojo)
