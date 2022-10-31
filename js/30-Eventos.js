@@ -107,6 +107,15 @@ boton.addEventListener('mouseout', function(){
 //////////////////////////////////////////////////////////////////////
 
 
+//////////////////////////////////////////////////////////////////////
+/*
+se agrego al index un nuevo imput (ventana interactiva)
 
+		<form>
+			<input type="texto" name="nombre" id="campo_nombre"/>
+		</form>
+
+*/
 
 // CUANDO SALGAS DE UN ELEMENTO ---------------------------------------
+
