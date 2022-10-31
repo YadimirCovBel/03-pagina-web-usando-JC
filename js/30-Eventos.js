@@ -1,5 +1,16 @@
 'use strict'
-/*
+
+//EVENTO LOAD///////////////////////////////////////////////////////////
+window.addEventListener('load',() => {
+
+    //load es un evento que impide que las cosas se proesen hasta que
+    //todo este cargado en la pagina  en este caso metimos todos los 
+    //eventos en el Load para que se prosece despuesde que la ventana 
+    //termine de cargar, con esto podemos poner sobre el el scrip en 
+    //el head siendo el sitio mas recomendable para cargarlo en vez 
+    //del final de la pagina 
+
+    /*
 los eventos son funciones que se ejecutan cada que susede algo, 
 cuando el usuario da click, escrube algo, borra algo, redurecciona 
 la ventana.
@@ -165,4 +176,9 @@ imput.addEventListener('keyup', function(event){
     console.log("[keyup] tecla soltada en el imput",
     String.fromCharCode(event.keyCode));
 });
+// se activa cuando se suelta una tecla 
+//funciona de forma similar a keydown y kehypress
 
+});
+
+//final del load
