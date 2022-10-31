@@ -117,5 +117,52 @@ se agrego al index un nuevo imput (ventana interactiva)
 
 */
 
-// CUANDO SALGAS DE UN ELEMENTO ---------------------------------------
+//FOCUS////////////////////////////////////////////////////////////////
+var imput = document.querySelector("#campo_nombre")
+imput.addEventListener('focus', function(){
+    console.log("[focus]estas dentro del imput");
+});
+//con focus se agregam eventos cuando se esta entrado o interactuando
+//con el elemento en este caso una ventana de texto
+
+///BLUR///////////////////////////////////////////////////////////////
+var imput = document.querySelector("#campo_nombre")
+imput.addEventListener('blur', function(){
+    console.log("[blur]estas fuera del imput");
+});
+// con Blur el evento tomaaccion cuando sales del campo con el que 
+// se interactua en este caso cuadro de texto 
+
+///KEYDOWN/////////////////////////////////////////////////////////////
+var imput = document.querySelector("#campo_nombre")
+imput.addEventListener('keydown', function(event){
+    console.log("[keydown]estas presionando teclas dentro del imput",
+    String.fromCharCode(event.keyCode));
+});
+
+    //String.fromCharCode(event.keyCode));
+// le dimos un parametro a la funcion en este caso (event) para usar
+// .fromCharCode(event.keyCode) lo cual nos dara lo que se tecleo en 
+//conjunto con el keydown y strign lo convierte en texto asi podemos 
+// ver lo que el usuario escribe
+
+//susede cuando presionas las teclas 
+
+//KEYPRESS/////////////////////////////////////////////////////////////
+
+var imput = document.querySelector("#campo_nombre")
+imput.addEventListener('keypress', function(event){
+    console.log("[keypress] tecla precionada en el imput",
+    String.fromCharCode(event.keyCode));
+});
+
+    // cuando presiono una tecla 
+    // parece funcionar para lo mismo que keydown
+///KEYUP//////////////////////////////////////////////////////////////
+
+var imput = document.querySelector("#campo_nombre")
+imput.addEventListener('keyup', function(event){
+    console.log("[keyup] tecla soltada en el imput",
+    String.fromCharCode(event.keyCode));
+});
 
