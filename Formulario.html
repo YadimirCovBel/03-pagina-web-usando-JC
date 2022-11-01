@@ -1,8 +1,67 @@
 <!--
-    crear un formulario que tenga tres campos
-    1 nombre
-    2 apellidos
-    3 edad
-    4 botton de submit
-    
+    1 crear un formulario que tenga tres campos
+        1 nombre
+        2 apellidos
+        3 edad
+    2 botton de submit para enviar el formulario
+    3 Mostrar los datos por pantalla
+    4 tener un boton que al darle click nos meustra los datos actuales
+        del formulario
+
 -->
+
+<DOCTYPE HTML>
+	<!DOCTYPE html>
+	<html lang="es">
+	    <head>
+            <meta charset="utf-8">
+            <!-- permite que usemos caracteres especiales-->
+            <title> Ejercisio Dom, Eventos y Funciones</title>
+            <script type="text/javascript" src="js/32-ejercisio-dom.js"><$</script>
+<style>
+    .box{
+        width: 200px;
+        height: 250px;
+        float: left;
+        margin: 20px;
+    }
+    .dashed{
+        border: 3px dashed black;
+        padding: 5px;
+    }
+    </style>
+	    </head>
+	<body>
+<h1>Ejercisios Dom, Eventos y Funciones - Curso JS</h1>
+<div class="box">
+    <form action="" method="POST" id="formulario" onsubmit="return false">
+        <label for="nombre">Nombre: </label><br/>
+        <input type="=text"name="nombre" id="nombre"/><br/>
+        <label for="apellidos">Apellidos: </label><br/>
+        <input type="=text"name="apellidos" id="apellidos"/><br/>
+
+
+        <label for="edad">Edad: </label><br/>
+        <input type="=number"name="edad" id="edad"/><br/>
+
+        <input type="submit" value="enviar" id="submit"/><br/>
+
+        </form>
+    </div>
+
+    <div class="box dashed">
+        <h3>Informacion del Usuario</h3>
+        <hr>
+        <p id="p_nombre">
+            Nombre: <span></span>
+        </p>
+        <p id="p_apellidos">
+            Apellidos: <span></span>
+        </p>
+        <p id="p_edad">
+            Edad: <span></span>
+        </p>
+        </div>
+
+	</body>
+	</html>

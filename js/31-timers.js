@@ -27,6 +27,7 @@ function intervalo(){
 }
 
 var tiempo = intervalo()
+// pusimos la funcion intervalo en una variable 
 
 
 
