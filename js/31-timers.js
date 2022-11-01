@@ -8,19 +8,26 @@ window.addEventListener('load', function(){
 
 //set interval //////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////
+function intervalo(){
+    // creamos una fincion para el intervalo y lo ingresamos en la 
+    //misma para usa la funcionen otro codigo
+    var tiempo = setInterval(function(){
+        console.log("set Interval ejecutado")
+    
+        var encabesado = document.querySelector("h1")
+        //creamos una variable que selecciona el encabvezado
+        if(encabesado.style.fontSize == "50px"){
+            encabesado.style.fontSize = "30px"
+        }else{
+    
+            encabesado.style.fontSize = "50px"
+        }
+    }, 1000)
+    return tiempo;
+}
 
-var tiempo = setInterval(function(){
-    console.log("set Interval ejecutado")
+var tiempo = intervalo()
 
-    var encabesado = document.querySelector("h1")
-    //creamos una variable que selecciona el encabvezado
-    if(encabesado.style.fontSize == "50px"){
-        encabesado.style.fontSize = "30px"
-    }else{
-
-        encabesado.style.fontSize = "50px"
-    }
-}, 1000)
 
 
 //encabesado.style.fontSize == "50px"
@@ -65,7 +72,27 @@ var stop = document.querySelector("#stop")
 stop.addEventListener("click", function(){
     alert("has detenido el intervalo del encavesado")
     clearInterval(tiempo);
+
 })
+//clearInterval(tiempo); es para detener la variable que usa tiempo
+
+//stop.addEventListener("click", function() con esto seleccionamos 
+    //que se active este evento con presionar el boton
+///////////////////////////////////////////////////////////////////////
+// se agrego al index el boton start para reiniciar el interval 
+//detenido por el stop
+/*
+			<button id="Start">Start</button>
+*/
+
+var Start = document.querySelector("#Start")
+Start.addEventListener("click", function(){
+    alert("has iniciado el intervalo del encavesado")
+    intervalo();
+
+})
+
+
 
 })
 // final del evento load
