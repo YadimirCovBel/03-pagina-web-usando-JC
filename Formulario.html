@@ -4,9 +4,10 @@
         2 apellidos
         3 edad
     2 botton de submit para enviar el formulario
-    3 Mostrar los datos por pantalla
-    4 tener un boton que al darle click nos meustra los datos actuales
+    3 Mostrar los datos por pantalla y tener un boton que al darle click nos meustra los datos actuales
         del formulario
+    4 Validacion del formulario
+
 
 -->
 
@@ -37,6 +38,7 @@
     <form action="" method="POST" id="formulario" onsubmit="return false">
         <label for="nombre">Nombre: </label><br/>
         <input type="=text"name="nombre" id="nombre"/><br/>
+        <span id="error_nombre"></span>
         <label for="apellidos">Apellidos: </label><br/>
         <input type="=text"name="apellidos" id="apellidos"/><br/>
 
