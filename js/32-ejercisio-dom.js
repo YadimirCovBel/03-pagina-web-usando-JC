@@ -96,6 +96,10 @@ En HTML, la etiqueta span es un elemento contenedor en línea genérico.
  Las etiquetas span generalmente envuelven secciones de texto con
   fines de estilo o para agregar atributos a una sección de texto 
   sin crear una nueva línea de contenido.
+
+  document.querySelector("#error_nombre").style.display = "none"
+    es para borrar el mensaje  despues de que se alla escrito bien 
+    el dato requerido
  */
 
 // ejercisio extra validar formulario 
