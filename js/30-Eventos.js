@@ -93,6 +93,8 @@ boton.addEventListener('click', function(){
     //boton.style.border ="10px solid black"
     //modificamos directamente el boton
     this.style.border = "10px solid black"
+    //con this podemos elegir el elemento seleccionado o con el que se
+    //esta trabajando
 });
 
 /*
