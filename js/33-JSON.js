@@ -49,6 +49,10 @@ bastante simple
  p.append(peliculas[index].titulo + " - "
     + peliculas[index].year);
 simplemente sumando el otro elemento 
+
+
+
+
 */
 window.addEventListener('load', function(){
 
