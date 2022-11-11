@@ -133,15 +133,22 @@ extraida
 
         loading.style.display = 'none';
 
-  */
-   var div_usuarios = document.querySelector("#Usuarios")
-   var loading =  document.querySelector(".loading")
-var usuarios = []
-fetch('https://reqres.in/api/users?page=2')
-.then(data => data.json())
-.then(users => {
-    usuarios = users.data;
-    console.log(usuarios)
+
+        las promesas son utiles para evitar el callback hell que seria 
+    un callback dentrode otro callback  lo cual hace al codigo ilegible
+    e insostenible, para evitar esto es el metodo fetch que trabaja 
+    con promesas.
+    
+        puede pasar que tengamos varias peticiones ajax  que tenemos que esperar
+    tener el  resultado de una para poder ejecutar el resultado de otra
+    y asu continuar de forma progresiva.
+
+fetch('https://reqres.in/api/users?page=2') llamada ajax
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        encapsulamos en una funcion el codigo que utilizamos para mostrar la 
+    listade usuarios 
+
+function listadoUsuarios(usuario){
 
     usuarios.map((user, i )=>{
     
@@ -154,6 +161,107 @@ fetch('https://reqres.in/api/users?page=2')
        loading.style.display = 'none';
 
     });
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+    despues de encapsular el codigo para llamar la informacion de los usuarios 
+en una funcion  podemos solo hacer un callback con la funcion colocando 
+    listadoUsuarios(users,data)
+
+    ya con esto podemos incluso retirar del codigo la variable usuarios logrando
+minimisar la cantidad de codigo pero igualmente muestra un correcto 
+funcionamiento
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    ahora haremos una modificasion apra usar otro api que se utilizara para
+ingresar 1 usuario 
+
+function getUsuarios(){
+    return fetch('https://reqres.in/api/users/2');
+
+
+};
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+se borrara este codigo para usar uno nuevo 
+
+
+fetch('https://reqres.in/api/users?page=2')
+.then(data => data.json())
+.then(users => {
+    
+    listadoUsuarios(users.data)
 
 });
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+
+
+  */
+   var div_usuarios = document.querySelector("#Usuarios")
+   var div_NewUsuario = document.querySelector("#NewgetUsuario")
+   
+   //var loading =  document.querySelector(".loading")
+   //var loadingNewUser =  document.querySelector(".loading")
+
+
+getUsuarios()
+.then(data => data.json())
+.then(users => {
+    
+    listadoUsuarios(users.data)
+
+    return getNEWUsuario();
+
+})
+.then(data => data.json())
+.then(getUsuario => {
+    MostrarNewUsuario(getUsuario.data)
+
+});
+
+
+function getNEWUsuario(){
+    return fetch('https://reqres.in/api/users/2');
+
+};
+
+function getUsuarios(){
+    return fetch('https://reqres.in/api/users?page=2')
+
+};
+
+
+function listadoUsuarios(usuarios){
+
+    usuarios.map((user, i )=>{
+    
+        let nombre = document.createElement('h3');  
+      
+       nombre.innerHTML = i + " " + user.first_name + " " + user.last_name;
+    
+       div_usuarios.appendChild(nombre);
+       
+      // loading.style.display = 'none';
+      document.querySelector(".loading").style.display = 'none';
+
+    });
+}
+
+function MostrarNewUsuario(user){
+
+    let nombre = document.createElement('h4');  
+    let avatar = document.createElement('img')      
+    nombre.innerHTML =" " + user.first_name + " " + user.last_name;
+    avatar.src = user.avatar;
+    avatar.width = '100';
+    div_NewUsuario.appendChild(nombre);
+    div_NewUsuario.appendChild(avatar);       
+    //loadingNewUser.style.display = 'none';
+    document.querySelector("#NewgetUsuario .loading").style.display = 'none';
+        };
+
+
+
+
+    
+
+
