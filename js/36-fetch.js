@@ -194,6 +194,17 @@ fetch('https://reqres.in/api/users?page=2')
 });
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
 
+asi se crea una nueva promesa 
+
+return new Promise((resolve, reject) => {
+       var profesor_string = JSON.stringify(profesor);    
+    if(typeof profesor_string != 'string') return reject('error')
+    
+    return resolve(profesor_string)
+
+    })
+
+donde se espesifica que es un resolve y un reject
 
   */
    var div_usuarios = document.querySelector("#Usuarios")
@@ -207,16 +218,24 @@ getUsuarios()
 .then(data => data.json())
 .then(users => {
     
-    listadoUsuarios(users.data)
+    listadoUsuarios(users.data);
+
+    
+    return getInfo();
+    
+})
+
+.then(data => {
 
     return getNEWUsuario();
 
-})
-.then(data => data.json())
-.then(getUsuario => {
-    MostrarNewUsuario(getUsuario.data)
+    })
 
+.then(data => data.json())
+.then(user => {
+    MostrarNewUsuario(user.data)
 });
+
 
 
 function getNEWUsuario(){
@@ -229,6 +248,36 @@ function getUsuarios(){
 
 };
 
+function getInfo(){
+    
+    var profesor = {
+        nombre: 'Victor',
+        apellidos: 'Robles',
+        url: 'https://victorroblesweb.es'
+    };
+
+    return new Promise((resolve, reject) => {
+       var profesor_string = "";    
+
+       setTimeout(function(){
+       profesor_string = JSON.stringify(profesor);
+
+    }, 3000);
+
+        if(typeof profesor_string != 'string' || 
+        profesor_string != '') 
+        return reject('error 1')
+    
+        return resolve(profesor_string);
+        
+
+
+ 
+    
+    
+});
+
+}
 
 function listadoUsuarios(usuarios){
 
@@ -258,10 +307,3 @@ function MostrarNewUsuario(user){
     //loadingNewUser.style.display = 'none';
     document.querySelector("#NewgetUsuario .loading").style.display = 'none';
         };
-
-
-
-
-    
-
-
