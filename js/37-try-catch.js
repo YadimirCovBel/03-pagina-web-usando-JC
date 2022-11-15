@@ -28,6 +28,14 @@ decodeURIComponent es para codificar un url de una pagina web
 
 console.log(decodeURIComponent("https://victorroblesweb.es"));
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+try catch tiene limitaciones como links no codificados o arrays demasiado 
+grandes
+
+ar vector = new Array(9999999999999999);
+
+RangeError: Invalid array length
 
 */
 try {
