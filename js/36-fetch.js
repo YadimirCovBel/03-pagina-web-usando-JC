@@ -209,11 +209,9 @@ donde se espesifica que es un resolve y un reject
   */
    var div_usuarios = document.querySelector("#Usuarios")
    var div_NewUsuario = document.querySelector("#NewgetUsuario")
-   
-   //var loading =  document.querySelector(".loading")
-   //var loadingNewUser =  document.querySelector(".loading")
+   var div_profesor= document.querySelector("#div_profesor")
 
-
+   /*
 getUsuarios()
 .then(data => data.json())
 .then(users => {
@@ -225,18 +223,35 @@ getUsuarios()
     
 })
 
-.then(data => {
-
-    return getNEWUsuario();
-
-    })
-
 .then(data => data.json())
 .then(user => {
-    MostrarNewUsuario(user.data)
+    MostrarNewUsuario(user.data);
+
+})
+.then(data => {
+    console.log(data);
 });
+*/
 
 
+getUsuarios()
+    .then(data => data.json())
+    .then(users => {
+        listadoUsuarios(users.data);
+ 
+        return getInfo();
+    })
+    .then(data => {
+        div_profesor.innerHTML = data;
+        return getNEWUsuario();
+    })
+    .then(data => data.json())
+    .then(user => {
+        MostrarNewUsuario(user.data);
+    })
+    .catch(error => {
+        console.log(error);
+    });
 
 function getNEWUsuario(){
     return fetch('https://reqres.in/api/users/2');
@@ -254,30 +269,28 @@ function getInfo(){
         nombre: 'Victor',
         apellidos: 'Robles',
         url: 'https://victorroblesweb.es'
-    };
+    }
 
     return new Promise((resolve, reject) => {
-       var profesor_string = "";    
 
-       setTimeout(function(){
+       var profesor_string = '';    
+       setTimeout(() => {
        profesor_string = JSON.stringify(profesor);
+       
+       if(typeof profesor_string != 'string' || profesor_string == '') 
+    return reject('error 1');
 
+    return resolve(profesor_string);
+      
     }, 3000);
 
-        if(typeof profesor_string != 'string' || 
-        profesor_string != '') 
-        return reject('error 1')
     
-        return resolve(profesor_string);
-        
 
-
- 
-    
     
 });
 
 }
+
 
 function listadoUsuarios(usuarios){
 
@@ -289,7 +302,7 @@ function listadoUsuarios(usuarios){
     
        div_usuarios.appendChild(nombre);
        
-      // loading.style.display = 'none';
+    
       document.querySelector(".loading").style.display = 'none';
 
     });
@@ -298,12 +311,12 @@ function listadoUsuarios(usuarios){
 function MostrarNewUsuario(user){
 
     let nombre = document.createElement('h4');  
-    let avatar = document.createElement('img')      
+    let avatar = document.createElement('img');
+
     nombre.innerHTML =" " + user.first_name + " " + user.last_name;
     avatar.src = user.avatar;
     avatar.width = '100';
     div_NewUsuario.appendChild(nombre);
     div_NewUsuario.appendChild(avatar);       
-    //loadingNewUser.style.display = 'none';
-    document.querySelector("#NewgetUsuario .loading").style.display = 'none';
-        };
+    document.querySelector("#NewgetUsuario .loading").style.display = "none";
+        }
