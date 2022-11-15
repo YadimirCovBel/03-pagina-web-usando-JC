@@ -237,6 +237,15 @@ getUsuarios()
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 
 metodo catch es para capturar errores
+
+ .catch(error => {
+        console.log(error);
+        alert("error en las peticiones ")
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
 */
 
 
