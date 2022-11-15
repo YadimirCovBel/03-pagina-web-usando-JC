@@ -231,6 +231,12 @@ getUsuarios()
 .then(data => {
     console.log(data);
 });
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
+metodo catch es para capturar errores
 */
 
 
@@ -251,6 +257,7 @@ getUsuarios()
     })
     .catch(error => {
         console.log(error);
+        alert("error en las peticiones ")
     });
 
 function getNEWUsuario(){
