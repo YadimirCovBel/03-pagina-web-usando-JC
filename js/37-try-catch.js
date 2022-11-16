@@ -45,7 +45,7 @@ alert(year);
 
 //console.log(decodeURIComponent("https://victorroblesweb.es"));
 
-var vector = new Array(9999999999999999);
+//var vector = new Array(9999999999999999);
     
 } catch (error) {
     console.log(error)
