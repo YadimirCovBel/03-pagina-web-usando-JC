@@ -21,10 +21,12 @@ var dia = fecha.getDate();
 var hora = fecha.getHours();
 
 var textoHora = `
-    el año es: ${year}
+    el año es: ${year} 
     el mes es: ${mes}
     el dia es: ${dia}
     la hora es: ${hora}
 `
 
 console.log(textoHora)
+
+console.log(Math.random());
