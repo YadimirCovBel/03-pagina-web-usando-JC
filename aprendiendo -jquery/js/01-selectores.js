@@ -74,6 +74,42 @@ zebra
     $('.sin_borde').click(function(){
         console.log("click dado")
         $(this).addClass('zebra');    
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Seleccionar por etiquetas 
+
+
+    var parrafos = $('p');
+        parrafos.click(function(){
+            $(this).removeClass("zebra");
+        });
+
+
+con esto seleccionamos a todas las etiquetas y despues de 
+darle click se le quitara la clase zebra
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+en el index se agrego la clase .grande para que funcione 
+
+ var parrafos = $('p').css("cursor", "pointer");
+        parrafos.click(function(){
+            var this1 = $(this);
+            if(!this1.hasClass('grande')){
+                this1.addClass('grande');
+            }else{
+                this1.removeClass('grande');
+            }
+           
+        });
+
+con esto hacemos que al dar click se agrege o quite el .grande
+de los parrafos, tambien 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
+    var parrafos = $('p').css("cursor", "pointer");
+con esto hacemos que cuando pases el mouse sobre un parrafo
+se vea la mano de pinter en el navegador
 
 
 */
@@ -98,6 +134,22 @@ $(document).ready(function(){
         console.log("click dado")
         $(this).addClass('zebra');
     })
+
+// se agrego la clase .grande para que funcione 
+    var parrafos = $('p').css("cursor", "pointer");
+        parrafos.click(function(){
+            var this1 = $(this);
+            if(!this1.hasClass('grande')){
+                this1.addClass('grande');
+            }else{
+                this1.removeClass('grande');
+            }
+           
+        });
+
+
+
+
     console.log("estamos listos!")
     console.log(mi_clase);
 });
