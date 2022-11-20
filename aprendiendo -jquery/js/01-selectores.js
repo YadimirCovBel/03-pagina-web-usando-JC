@@ -123,7 +123,7 @@ Selectores por atributo
 Agregar clases a elementos
 
         $('p, a').addClass('margen-superior');
-        
+
     con eso agregamos la clase margen-superior a todos los parrafos
 
 
@@ -172,7 +172,7 @@ var parrafos = $('p').css("cursor", "pointer");
 
 // otros 
 
-$('p, a').addClass('margen-superior');
+//$('p, a').addClass('margen-superior');
 
 
     console.log("estamos listos!")
