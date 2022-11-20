@@ -111,11 +111,16 @@ de los parrafos, tambien
 con esto hacemos que cuando pases el mouse sobre un parrafo
 se vea la mano de pinter en el navegador
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 
+Selectores por atributo
+
+ 
 */
 
 $(document).ready(function(){
 
+    //selector de ID se usa 
     $("#rojo").css("background","red")
                     .css("color","white")
                     ;
@@ -129,14 +134,15 @@ $(document).ready(function(){
                     ;
 
     var mi_clase = $('.zebra').css("padding", "5px");
-
+//Selector de clases 
     $('.sin_borde').click(function(){
         console.log("click dado")
         $(this).addClass('zebra');
     })
 
 // se agrego la clase .grande para que funcione 
-    var parrafos = $('p').css("cursor", "pointer");
+//eleccionar por etiquetas 
+var parrafos = $('p').css("cursor", "pointer");
         parrafos.click(function(){
             var this1 = $(this);
             if(!this1.hasClass('grande')){
@@ -147,10 +153,14 @@ $(document).ready(function(){
            
         });
 
+//selector por etiquetas 
+
+        $('[title="Google"]').css('background', 'green');
+        $('[title="Facebook"]').css('background', 'blue');
+
 
 
 
     console.log("estamos listos!")
     console.log(mi_clase);
 });
-
