@@ -115,8 +115,19 @@ se vea la mano de pinter en el navegador
 
 Selectores por atributo
 
- 
-*/
+         $('[title="Google"]').css('background', 'green');
+        $('[title="Facebook"]').css('background', 'blue');
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+
+
+Agregar clases a elementos
+
+        $('p, a').addClass('margen-superior');
+        
+    con eso agregamos la clase margen-superior a todos los parrafos
+
+
+        */
 
 $(document).ready(function(){
 
@@ -153,12 +164,15 @@ var parrafos = $('p').css("cursor", "pointer");
            
         });
 
-//selector por etiquetas 
+//selector por atributo 
 
         $('[title="Google"]').css('background', 'green');
         $('[title="Facebook"]').css('background', 'blue');
 
 
+// otros 
+
+$('p, a').addClass('margen-superior');
 
 
     console.log("estamos listos!")
