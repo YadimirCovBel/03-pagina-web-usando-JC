@@ -127,7 +127,28 @@ Agregar clases a elementos
     con eso agregamos la clase margen-superior a todos los parrafos
 
 
-        */
+seleccionar sin saber exactamente donde estan elementos 
+con esto se recorrera todo el dom buscando los elementos indicados
+los agrega en un array, esto es cuando no sabemos donde estan los 
+elementos
+
+    var busqueda = $("#caja").find('.resaltado')
+
+    console.log(busqueda)
+ 
+       otra opccion eran pero find es para buscar en mucho codigo
+            Var busqueda = $("#caja .resaltado')
+ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+ 
+.parent.find es para salir un nivel por encimpa para realizar la
+busqueda de forma mas amplia entre mas parent() coloquemos mas 
+amplia sera al busqueda saliendose niveles  saltando de una etiqueta a otra
+
+    var busqueda = $("#caja .resaltado").eq(0).parent().parent().parent().find('[title="Google"]');
+
+        
+        
+            */
 
 $(document).ready(function(){
 
@@ -174,7 +195,18 @@ var parrafos = $('p').css("cursor", "pointer");
 
 //$('p, a').addClass('margen-superior');
 
+//seleccionar sin saber exactamente donde estan elementos 
 
+//var busqueda = $("#caja").find('.resaltado')
+
+// .parent.find es para salir un nivel por encimpa para realizar la
+
+//var busqueda = $("#caja .resaltado").eq(0).parent().parent().parent().find('[title="Google"]');
+
+var busqueda = $("#elemento2").parent().parent().find('.resaltado');
+
+console.log(busqueda)
     console.log("estamos listos!")
-    console.log(mi_clase);
+  //  console.log(mi_clase);
+    
 });
