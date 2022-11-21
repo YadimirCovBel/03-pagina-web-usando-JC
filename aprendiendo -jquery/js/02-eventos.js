@@ -41,26 +41,81 @@ veremos los eventos mouse over y mouse out
 
 Clase 97 HOVER
 
+                  //hover
+    
+                var caja = $("#caja");
+            //mouseover
+                function cambiaRojo(){
+                    $(this).css("background","red");
+                }
+
+            //mouseout
+                function cambiaVerde(){
+                    $(this).css("background","green");
+                }
+                    //hover
+                caja.hover(cambiaRojo, cambiaVerde);
+        
+        tomamos la variable caja para aplicarla con .hover y tambien las funciones de cambio
+    de color dandoles nombre para agregarlos en el hover  dando el mismo resultado que en 
+    la sesion anterior con menos codigo. 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        
+                sesion 98 click y doble click
+
+
 
 
 */
 $(document).ready(function(){
 
 //veremos los eventos mouse over y mouse out
-
+    /*
     var caja = $("#caja");
-    //mouseover
+//mouseover
     caja.mouseover(function(){
         $(this).css("background","red");
     })
 
-    //mouseout
+//mouseout
     caja.mouseout(function(){
         $(this).css("background","green");
     })
 
-
+    */
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //hover
+    
+    var caja = $("#caja");
+//mouseover
+    function cambiaRojo(){
+        $(this).css("background","red");
+    }
+
+//mouseout
+    function cambiaVerde(){
+        $(this).css("background","green");
+    }
+        //hover
+    caja.hover(cambiaRojo, cambiaVerde);
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
+        //click 
+
+        caja.click(function(){
+            $(this).css("background", "blue")
+                    .css("color", "white")
+                    ;
+        })
+        // doble click
+
+        caja.dblclick(function(){
+            $(this).css("background", "pink")
+                    .css("color", "yellow")
+                    ;
+        })
+
 
     alert("eventos cargado")
 });
