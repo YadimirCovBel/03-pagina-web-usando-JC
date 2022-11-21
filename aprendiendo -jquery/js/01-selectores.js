@@ -146,7 +146,7 @@ amplia sera al busqueda saliendose niveles  saltando de una etiqueta a otra
 
     var busqueda = $("#caja .resaltado").eq(0).parent().parent().parent().find('[title="Google"]');
 
-        
+    var busqueda = $("#elemento2").parent().parent().find('.resaltado');
         
             */
 
