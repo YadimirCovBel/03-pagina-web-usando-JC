@@ -150,6 +150,33 @@ $(document).ready(function(){
  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
  sesion 100 mouse down y mose up   
 
+   //mouse down este evento se activa al precionar con el mouse
+        datos.mousedown(function(){
+          $(this).css("border-color", "gray" );  
+        });
+    //mouse up este evento se actiba al soltar el boton del mouse
+        datos.mouseup(function(){
+            $(this).css("border-color", "black" );  
+          });
+    //mouse move  esta funcion nos da la localizacion del mouse en la pagina.
+        $(document).mousemove(function(){
+            console.log("En X: "+event.clientX);
+            console.log("En Y: "+event.clientY);
+        });
+Vrearemos un div que seguira a mouse en ete caso lo llamamos sigueme
+
+        le dimso estos style
+            #sigueme{
+            width: 25px;                ancho
+            height: 25px;               alto
+            position: absolute;         posision
+            display: block;             
+            background-color: yellow;   color 
+            opacity: 0.3;               opasidad
+            border: 3px solid black;
+            border-radius: 999px;         radio (para ahcer un circulo)
+        }
+
     */
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     //hover
@@ -185,13 +212,39 @@ $(document).ready(function(){
 //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //eventos focus y blurr
         var nombre = $("#nombre");
+        var datos =  $("#datos");
         nombre.focus(function(){
             $(this).css("border", "5px solid green");
         })
         nombre.blur(function(){
             $(this).css("border", "1px solid #ccc");
-            $("#datos").text($(this).val()).show();
+            datos.text($(this).val()).show();
         })
+
+        //mouse down este evento se activa al precionar con el mouse
+        datos.mousedown(function(){
+            $(this).css("border-color", "gray" );  
+          });
+          //mouse up este evento se actiba al soltar el boton del mouse
+          datos.mouseup(function(){
+              $(this).css("border-color", "black" );  
+            });
+          //mouse move  esta funcion nos da la localizacion del mouse en la pagina.
+          $(document).mousemove(function(){
+            
+                //dal las cordenadas del mouse en X
+              console.log("En X: "+event.clientX);
+              //dal las cordenadas del mouse en Y
+              console.log("En Y: "+event.clientY);
+              //con esto quitamos el cursor del mouse de la web
+              $('body').css("cursor","none")
+              $("#sigueme")
+              // con esto el div sigueme trakea y persigue el mouse por el vector X
+                            .css("left",event.clientX)
+              // con esto el div sigueme trakea y persigue el mouse por el vector Y              
+                            .css("top",event.clientY);
+          });
+
 
     alert("eventos cargado")
 });
