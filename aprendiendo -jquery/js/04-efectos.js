@@ -90,7 +90,6 @@ ocultar.click(function(){
     });
     mostrar.show();
 
-
 */
 $(document).ready(function(){
 var caja = $("#caja")
