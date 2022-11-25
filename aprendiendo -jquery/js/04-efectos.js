@@ -84,7 +84,7 @@ var caja = $("#caja")
 var mostrar = $("#mostrar")
 var ocultar = $("#ocultar")
 var todoEnUno = $('#todoEnUno')
-
+var animar = $('#animar')
 mostrar.hide();
 
 mostrar.click(function(){
@@ -103,5 +103,45 @@ ocultar.click(function(){
 todoEnUno.click(function(){
     caja.slideToggle('fast');
 });
+
+animar.click(function(){
+    //en este caso agregamos una animacion llamada marginLeft esta
+    //lo que hace es mover el elemento seleccionado hacia la 
+    //izquierda  el indicamos que se mueva 500 pixeles de forma 
+    //lenta
+    caja.animate({
+                    marginLeft: '500px',
+                    // fontSize agranda las letras
+                    fontSize: '40px',
+                    //hieght incrementa la altura del div
+                    height: '110px'
+                    }, 'slow')
+         .animate({
+                    // con borderRadius hacemos que sea mas 
+                    //redondo el div seleccionado
+                    borderRadius: '900px',
+                    //marginTop mueve hacia abajo el elemento
+                    //deacuerdo con la cantidad de px agregado
+                    marginTop: '100px'    
+                 }, 'slow')       
+        .animate({
+                     marginLeft: '0px',  
+                    borderRadius: '0px'
+                      
+                 }, 'slow')   
+                 
+        .animate({
+                    borderRadius: '100px',
+                    marginTop: '0px'    
+                 }, 'slow')          
+         
+        .animate({
+                    marginLeft: '500px',
+                    fontSize: '40px',
+                    height: '110px'
+                    }, 'slow')        
+                 ;
+});
+
 
 });
