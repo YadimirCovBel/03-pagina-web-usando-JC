@@ -55,7 +55,14 @@ boton de la web y con
 le quitamos ese atributo para que el boton vuelva a ser funcional.
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    */
+
+    para que el imput quede vacio despues de agregar una apgina web tenemos que 
+    seleccionar el input y agregar un val vacio 
+        $("#add_link").val('');
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+*/
 $(document).ready(function(){
 reloadLinks();
 $('#add_button')
