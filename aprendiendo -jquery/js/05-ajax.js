@@ -22,6 +22,15 @@ en una aplicasion monolitica es comun incrustar html
 
         datos.load("https://reqres.in/");
     con este load hacemos que en el div datos se muestre el contenido en ese html
+
+            overflow:scroll; 
+    al agregar overflow:scroll; a el div donde usamos el load logramos que se vea 
+    el contenido de la pagina con una barra de scroll
+
+
+Load es un metodo GET
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
 */
 
 $(document).ready(function(){
