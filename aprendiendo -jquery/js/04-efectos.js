@@ -77,6 +77,19 @@ tambien podemos hacer el efecto slide con
         });
         });
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+sesion 104 callback en efectos
+
+ocultar.click(function(){
+    $(this).hide();
+    caja.slideUp('slow', function(){
+        //en la accion de ocultar agregamos un segundo parametro 
+        // una funcion de callback la cual mostrara un 
+        //console.log avisandonos que ha temrinado de ocultarse
+        console.log("cartel ocultado")
+    });
+    mostrar.show();
+
 
 */
 $(document).ready(function(){
@@ -95,8 +108,11 @@ mostrar.click(function(){
 
 ocultar.click(function(){
     $(this).hide();
-    caja.slideUp('slow');
+    caja.slideUp('slow', function(){
+         console.log("cartel ocultado")
+    });
     mostrar.show();
+
 });
 
 
