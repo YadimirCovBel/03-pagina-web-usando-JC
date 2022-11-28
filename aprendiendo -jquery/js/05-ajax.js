@@ -69,19 +69,26 @@ var formulario = $("#formulario");
       
 //creamos un formulario en el index para que se agrege informacion por medio 
 //de los inputs
-    formulario.submit(function(){
+    formulario.submit(function(e){
+        //agregamos e a la funcion y tambien un .prevent default
+        // para que no nos mande a otra pagina al realizar la funcion
+        e.preventDefault();
               //creamos un Json para agregar a el post
             var usuario = {
                 name: $('input[name="name"]').val(),
                     //asi seleccionamos el imput en la web al cual sele ingresa
                     //informacion y esta sera tomada por val para agregarlo
-                web: $('input[name="WEB"]').val()
+                web: $('input[name="web"]').val()
                 };
-                console.log(usuario);
+                
             $.post($(this).attr("action"), usuario, function(response){
                 console.log(response);
+                }).done(function(){
+                    alert("ususario agregado correctamente ");
                 }); 
-
+                //se agrego un return false para que no se pase a otra
+                //pagina al usar la funcion
+                return false;
     });
 
     alert("todo listo");
