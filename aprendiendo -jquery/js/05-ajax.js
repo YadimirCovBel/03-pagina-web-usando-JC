@@ -47,24 +47,9 @@ Load es un metodo GET
                         datos.append("<p>"+element.first_name+" "+element.last_name +"</p>");
                     });
             });
-con 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+sesion 107 post AJAX
 
-*/
-
-$(document).ready(function(){
-var datos = $("#datos");
-var formulario = $("#formulario");
-    //Load 
- //   datos.load("https://reqres.in/");
-
-
-    //Get
-
-    $.get("https://reqres.in/api/users?page=2", function(response){
-            response.data.forEach((element, index) => {
-                datos.append("<p>"+element.first_name+" "+element.last_name +"</p>");
-            });
-    });
     //post
       
 //creamos un formulario en el index para que se agrege informacion por medio 
@@ -84,10 +69,61 @@ var formulario = $("#formulario");
             $.post($(this).attr("action"), usuario, function(response){
                 console.log(response);
                 }).done(function(){
+                    //.done es para agregar una funcion al terminar en 
+                    //este caso agregamos un alert para saber cuando
+                    //termino el proceso 
                     alert("ususario agregado correctamente ");
                 }); 
                 //se agrego un return false para que no se pase a otra
                 //pagina al usar la funcion
+                return false;
+    });
+
+    alert("todo listo");
+});
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Sesion 108 metodo $AJAX
+
+
+
+
+*/
+
+$(document).ready(function(){
+var datos = $("#datos");
+var formulario = $("#formulario");
+    //Load 
+ //   datos.load("https://reqres.in/");
+
+
+    //Get
+
+    $.get("https://reqres.in/api/users?page=2", function(response){
+            response.data.forEach((element, index) => {
+                datos.append("<p>"+element.first_name+" "+element.last_name +"</p>");
+            });
+    });
+    //post
+      
+
+    formulario.submit(function(e){
+
+        e.preventDefault();
+
+            var usuario = {
+                name: $('input[name="name"]').val(),
+                    
+                web: $('input[name="web"]').val()
+                };
+                
+            $.post($(this).attr("action"), usuario, function(response){
+                console.log(response);
+                }).done(function(){
+                   
+                    alert("ususario agregado correctamente ");
+                }); 
+               
                 return false;
     });
 
