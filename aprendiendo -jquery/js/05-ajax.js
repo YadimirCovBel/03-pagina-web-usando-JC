@@ -31,19 +31,58 @@ en una aplicasion monolitica es comun incrustar html
 Load es un metodo GET
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
+
+        sesion 106 metodos get y post
+
+    //Get
+//con get podemos poner una pagina y comos egundo parametro dar espesificasiones
+//en este caos seleccionaremos una pagina escogiendo page: 3 y generamos una
+//function a la cual llamamos response 
+
+        $.get("https://reqres.in/api/users?page=2", {page:3} , function(response){
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        $.get("https://reqres.in/api/users?page=2", function(response){
+                    response.data.forEach((element, index) => {
+                        datos.append("<p>"+element.first_name+" "+element.last_name +"</p>");
+                    });
+            });
+con 
+
 */
 
 $(document).ready(function(){
 var datos = $("#datos");
+var formulario = $("#formulario");
     //Load 
-    datos.load("https://reqres.in/");
+ //   datos.load("https://reqres.in/");
 
 
+    //Get
 
+    $.get("https://reqres.in/api/users?page=2", function(response){
+            response.data.forEach((element, index) => {
+                datos.append("<p>"+element.first_name+" "+element.last_name +"</p>");
+            });
+    });
+    //post
+      
+//creamos un formulario en el index para que se agrege informacion por medio 
+//de los inputs
+    formulario.submit(function(){
+              //creamos un Json para agregar a el post
+            var usuario = {
+                name: $('input[name="name"]').val(),
+                    //asi seleccionamos el imput en la web al cual sele ingresa
+                    //informacion y esta sera tomada por val para agregarlo
+                web: $('input[name="WEB"]').val()
+                };
+                console.log(usuario);
+            $.post($(this).attr("action"), usuario, function(response){
+                console.log(response);
+                }); 
 
-
-
-
+    });
 
     alert("todo listo");
 });
