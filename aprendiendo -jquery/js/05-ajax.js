@@ -85,7 +85,17 @@ sesion 107 post AJAX
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Sesion 108 metodo $AJAX
 
+// otro metodo para realizar peticiones es el $.ajax este metodo permite 
+//manipular de forma ams amplia las cosas con este metodo podemos definir
+//muchos aspectos de la peticion como el type, dataType y contentType.
 
+
+                $.ajax({
+                     type: 'POST',
+                     dataType: 'json',
+                     contentType: 'application/json',
+                });
+//en este caso pediremos la url
 
 
 */
@@ -116,16 +126,41 @@ var formulario = $("#formulario");
                     
                 web: $('input[name="web"]').val()
                 };
-                
+               /* 
             $.post($(this).attr("action"), usuario, function(response){
                 console.log(response);
                 }).done(function(){
                    
                     alert("ususario agregado correctamente ");
                 }); 
+                */
+//en este caso pediremos la url, tambien definiremos el tipo de dato que 
+//sera usuario 
+                $.ajax({
+                     type: 'POST',
+                    url: $(this).attr("action"),
+                    data: usuario,
+//hay varios metodos en este caos before send, hara que antes de ser enviado
+//realice una funcion. en este caso hicimos que nos envie a la terminar 
+//un aviso de que se esta realizando el proceso.
+                    beforeSend: function(){
+                        console.log("enviado usuario...")
+                    },
+//success es una funcion que en caso de que todo se realice de forma
+//adecuada enviara procesara la funcion o de no ser asi realizara lade
+//error
+                    success: function(response){
+                        console.log(response)
+                    },
+                    error: function(response){
+                        console.log("ha susedido un error")
+                    },
+                    //es para poner un tiempo para procesar 
+                    timeout: 2000
+                });
                
                 return false;
     });
 
-    alert("todo listo");
+
 });
