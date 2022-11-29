@@ -97,6 +97,34 @@ Sesion 108 metodo $AJAX
                 });
 //en este caso pediremos la url
 
+//en este caso pediremos la url, tambien definiremos el tipo de dato que 
+//sera usuario 
+                $.ajax({
+                     type: 'POST',
+                    url: $(this).attr("action"),
+                    data: usuario,
+//hay varios metodos en este caos before send, hara que antes de ser enviado
+//realice una funcion. en este caso hicimos que nos envie a la terminar 
+//un aviso de que se esta realizando el proceso.
+                    beforeSend: function(){
+                        console.log("enviado usuario...")
+                    },
+//success es una funcion que en caso de que todo se realice de forma
+//adecuada enviara procesara la funcion o de no ser asi realizara lade
+//error
+                    success: function(response){
+                        console.log(response)
+                    },
+                    error: function(response){
+                        console.log("ha susedido un error")
+                    },
+                    //es para poner un tiempo para procesar 
+                    timeout: 2000
+                });
+               
+                return false;
+    });
+
 
 */
 
@@ -134,28 +162,22 @@ var formulario = $("#formulario");
                     alert("ususario agregado correctamente ");
                 }); 
                 */
-//en este caso pediremos la url, tambien definiremos el tipo de dato que 
-//sera usuario 
+
                 $.ajax({
                      type: 'POST',
                     url: $(this).attr("action"),
                     data: usuario,
-//hay varios metodos en este caos before send, hara que antes de ser enviado
-//realice una funcion. en este caso hicimos que nos envie a la terminar 
-//un aviso de que se esta realizando el proceso.
+
                     beforeSend: function(){
                         console.log("enviado usuario...")
                     },
-//success es una funcion que en caso de que todo se realice de forma
-//adecuada enviara procesara la funcion o de no ser asi realizara lade
-//error
+
                     success: function(response){
                         console.log(response)
                     },
                     error: function(response){
                         console.log("ha susedido un error")
                     },
-                    //es para poner un tiempo para procesar 
                     timeout: 2000
                 });
                
