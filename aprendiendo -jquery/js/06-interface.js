@@ -91,6 +91,31 @@ sesion 114 sortable
             });
     update es una funcion que en este caso le agregamos event, ui lo cual hace
     que cada que se vea un evento o cambio en la lista ui nos de un aviso
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
+
+    sesion 115 droppable
+
+agregamos dos div al html
+                   <div id="elemento-movido">
+
+                    </div>
+                    <div id="area">
+
+                    </div>
+
+            //Droppable 
+    $("#elemento-movido").draggable();
+        //.draggable permite que el elemento se pueda mover
+    $("#area").droppable({
+        drop: function(){
+            console.log("has soltado algo dentro del area")
+        }
+    });
+        //.droppable permite que puedas arrojar elementos en el
+
+
+
 
 */
 var elemento = $('.elemento');
@@ -114,7 +139,16 @@ lista.sortable({
         console.log("ha cambiado la lista");
     }
 });
- 
+
+//Droppable 
+    $("#elemento-movido").draggable();
+        //.draggable permite que el elemento se pueda mover
+    $("#area").droppable({
+        drop: function(){
+            console.log("has soltado algo dentro del area")
+        }
+    });
+        //.droppable permite que puedas arrojar elementos en el
 
 
 
