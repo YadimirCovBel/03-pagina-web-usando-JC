@@ -63,12 +63,34 @@ cuadro y tambien con float: left los ordenamos uno al lado del otro izquierda
     
     TAMBINE LE DAREMOS STYLE A ul.ui
 
-          ul.ui-selecting {background-color: green;}
-        ul.ui-selected {background-color: blue;}
+            ul .ui-selecting {background-color: green;}
+            //cambiara el color mientras selecciono
+
+             ul .ui-selected {background-color: blue;}   
+            //cambiara el color cuando deje de seleccionarlo
+
+    //seleccionar elementos
+        var lista = $(".lista-seleccionable");
+
+        lista.selectable();
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+sesion 114 sortable
+  var lista = $(".lista-seleccionable");
+
+        //sortable permite ordenar elementos como uno desee
         
-
-
-
+            lista.sortable();
+ 
+    tambien es posible hacer que se guarden los cambios realizados con 
+            lista.sortable({
+                update: function(event, ui){
+                    console.log("ha cambiado la lista");
+                }
+            });
+    update es una funcion que en este caso le agregamos event, ui lo cual hace
+    que cada que se vea un evento o cambio en la lista ui nos de un aviso
 
 */
 var elemento = $('.elemento');
@@ -84,7 +106,15 @@ elemento.draggable();
 elemento.resizable();
 
 //seleccionar elementos
-lista.selectable();
+//lista.selectable();
+
+//sortable permite ordenar elementos como uno desee
+lista.sortable({
+    update: function(event, ui){
+        console.log("ha cambiado la lista");
+    }
+});
+ 
 
 
 
