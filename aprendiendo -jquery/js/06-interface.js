@@ -120,6 +120,43 @@ sesion 116 efectos jQuery ui
         float: none;
     con esto agregado al style de elemento lo proboca es que no hay elementos 
     sobre el mismo
+
+
+        //Efectos
+    $("#mostrar").click(function(){
+        $('.caja-efectos').toggle("shake", 4000);
+        //toggle es para aplicar el efecto y tambien quitarlo
+        //.toggle("fade"); hace ue el elemento se desvanesca
+        //.toggle("explode"); hace que el elemento explote
+        //.toggle("blind"); hace que se abra como una perciana hacia abajo
+        //.toggle("slide"); hace que el elemento apresca de izquierda a derecha
+        //.toggle("puff");
+        //.toggle("scale");
+        // se pueden agregar velosidades como 
+        //.toggle("shake", "slow");
+        //o tiempo como 
+        //.toggle("shake", 4000);
+
+
+        //si usamos .effect("explode"); igual se ejecuta pero desaparece el 
+        //elemento
+    });
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+sesion 117 Tooltips
+
+    html
+
+   <h3>ToolTip</h3>
+   <a href="#" title="acceder a la seccion de mis datos de esta web">Mis Datos</a>
+   <a href="#" title="logueate en esta web">identificarse</a>
+   <a href="#" title="ver todos mis amigos">amigos</a>
+
+    JS
+
+     $(document).tooltip();
+
+
+
 */
 var elemento = $('.elemento');
 var lista = $(".lista-seleccionable");
@@ -172,6 +209,10 @@ lista.sortable({
         //si usamos .effect("explode"); igual se ejecuta pero desaparece el 
         //elemento
     });
+
+    //tooltip
+
+    $(document).tooltip();
 
 
     alert("todo listo");
