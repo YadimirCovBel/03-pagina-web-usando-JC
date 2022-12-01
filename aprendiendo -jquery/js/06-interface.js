@@ -154,6 +154,19 @@ sesion 117 Tooltips
     JS
 
      $(document).tooltip();
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+sesion 118 cuadros de dialogo
+
+                //dialog
+    
+            $("#lanzar-popup").click(function(){
+                //agregamos un boton que al precionar arrojara el cuadro de dialogo 
+                //popup que esta configurado abajo para mostrarse
+                //con dialog generamos un cuadro de texto
+                $("#popup").dialog();
+            })
+
 
 
 
@@ -214,6 +227,14 @@ lista.sortable({
 
     $(document).tooltip();
 
+    //dialog
+    
+    $("#lanzar-popup").click(function(){
+        //agregamos un boton que al precionar arrojara el cuadro de dialogo 
+        //popup que esta configurado abajo para mostrarse
+        //con dialog generamos un cuadro de texto
+        $("#popup").dialog();
+    })
 
     alert("todo listo");
 })
