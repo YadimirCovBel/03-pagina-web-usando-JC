@@ -114,9 +114,12 @@ agregamos dos div al html
     });
         //.droppable permite que puedas arrojar elementos en el
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+sesion 116 efectos jQuery ui
 
-
-
+        float: none;
+    con esto agregado al style de elemento lo proboca es que no hay elementos 
+    sobre el mismo
 */
 var elemento = $('.elemento');
 var lista = $(".lista-seleccionable");
@@ -150,6 +153,25 @@ lista.sortable({
     });
         //.droppable permite que puedas arrojar elementos en el
 
+//Efectos
+    $("#mostrar").click(function(){
+        $('.caja-efectos').toggle("shake", 4000);
+        //toggle es para aplicar el efecto y tambien quitarlo
+        //.toggle("fade"); hace ue el elemento se desvanesca
+        //.toggle("explode"); hace que el elemento explote
+        //.toggle("blind"); hace que se abra como una perciana hacia abajo
+        //.toggle("slide"); hace que el elemento apresca de izquierda a derecha
+        //.toggle("puff");
+        //.toggle("scale");
+        // se pueden agregar velosidades como 
+        //.toggle("shake", "slow");
+        //o tiempo como 
+        //.toggle("shake", 4000);
+
+
+        //si usamos .effect("explode"); igual se ejecuta pero desaparece el 
+        //elemento
+    });
 
 
     alert("todo listo");
