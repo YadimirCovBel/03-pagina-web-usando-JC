@@ -167,6 +167,11 @@ sesion 118 cuadros de dialogo
                 $("#popup").dialog();
             })
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
+sesion 119 calendario
+
+
 
 
 
@@ -235,6 +240,13 @@ lista.sortable({
         //con dialog generamos un cuadro de texto
         $("#popup").dialog();
     })
+
+    //date piker
+
+    $("#calendario").datepicker();
+    //simplemente agregando .datepicker a un input generamos el calendario
+
+
 
     alert("todo listo");
 })
