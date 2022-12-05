@@ -42,5 +42,20 @@ para aplicar style a todo lo de la pagina web se usa el *{}
 
 agregamso todos los styles de la pagina  
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
 
+<nav> es para crear la barra de navegacion
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111
+    display: inline-block; hace que los elementos de la lista
+    se vean alineados uno al lado del otro
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+
+#menu ul li:hover{
+    background: #235e3d;
+}
+
+con esto en el ccs logramos hacer que cambie el color del fondo
+cuando colocamos el mouse sobre el elemento.
 */
