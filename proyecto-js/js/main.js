@@ -77,5 +77,16 @@ en el html dandole el class button-more
     
 }
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+para generar un side bar se utiliza 
+
+aside id="sidebar"></aside>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Agregamos formulario 
+
+
+
 
 */
