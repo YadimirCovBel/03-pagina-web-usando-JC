@@ -58,4 +58,24 @@ agregamso todos los styles de la pagina
 
 con esto en el ccs logramos hacer que cambie el color del fondo
 cuando colocamos el mouse sobre el elemento.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+creamos un boton desde css despues de crear el <a href> 
+en el html dandole el class button-more
+
+.button-more{
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    padding: 15px;
+    background: #235e3d;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    width: 70px;
+    
+}
+
+
 */
