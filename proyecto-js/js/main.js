@@ -93,12 +93,73 @@ Agregamos formulario
 
 $(document).ready(function(){
   
+    //slider
     $('.galeria').bxSlider({
         mode: 'fade',
         captions: true,
         slideWidth: 1200, 
-        pager: false,
+        pager: true,
 
       });
+
+
+
+    //posts
+    var posts = [
+        {
+            title: 'prueba de titulo 1',
+            date: 'pubicado el dia ' + moment().date() + " del mes " + moment().format("MMM") + "en el año " + moment().format("YYYY"),
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, urna eu aliquam faucibus, tortor ipsum pellentesque arcu, eu vestibulum ante dui vel neque. Proin sit amet enim quam. Praesent tincidunt imperdiet iaculis. Fusce consectetur quam non ante tempor, a commodo diam viverra. Sed blandit sit amet purus vitae tristique. Quisque pellentesque volutpat semper. Nam pulvinar sem ac magna tristique feugiat. In non ornare felis. Aliquam in turpis nec augue blandit pulvinar in vel odio.'
+        },
+        {
+            title: 'prueba de titulo 2',
+            date: 'pubicado el dia ' + moment().date() + " del mes " + moment().format("MMM") + "en el año " + moment().format("YYYY"),
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, urna eu aliquam faucibus, tortor ipsum pellentesque arcu, eu vestibulum ante dui vel neque. Proin sit amet enim quam. Praesent tincidunt imperdiet iaculis. Fusce consectetur quam non ante tempor, a commodo diam viverra. Sed blandit sit amet purus vitae tristique. Quisque pellentesque volutpat semper. Nam pulvinar sem ac magna tristique feugiat. In non ornare felis. Aliquam in turpis nec augue blandit pulvinar in vel odio.'
+        },
+        {
+            title: 'prueba de titulo 3',
+            date: 'pubicado el dia ' + moment().date() + " del mes " + moment().format("MMM") + "en el año " + moment().format("YYYY"),
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, urna eu aliquam faucibus, tortor ipsum pellentesque arcu, eu vestibulum ante dui vel neque. Proin sit amet enim quam. Praesent tincidunt imperdiet iaculis. Fusce consectetur quam non ante tempor, a commodo diam viverra. Sed blandit sit amet purus vitae tristique. Quisque pellentesque volutpat semper. Nam pulvinar sem ac magna tristique feugiat. In non ornare felis. Aliquam in turpis nec augue blandit pulvinar in vel odio.'
+        },
+        {
+            title: 'prueba de titulo 4',
+            date: 'pubicado el dia ' + moment().date() + " del mes " + moment().format("MMM") + "en el año " + moment().format("YYYY"),
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, urna eu aliquam faucibus, tortor ipsum pellentesque arcu, eu vestibulum ante dui vel neque. Proin sit amet enim quam. Praesent tincidunt imperdiet iaculis. Fusce consectetur quam non ante tempor, a commodo diam viverra. Sed blandit sit amet purus vitae tristique. Quisque pellentesque volutpat semper. Nam pulvinar sem ac magna tristique feugiat. In non ornare felis. Aliquam in turpis nec augue blandit pulvinar in vel odio.'
+        },
+        {
+            title: 'prueba de titulo 5',
+            date: 'pubicado el dia ' + moment().date() + " del mes " + moment().format("MMM") + "en el año " + moment().format("YYYY"),
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, urna eu aliquam faucibus, tortor ipsum pellentesque arcu, eu vestibulum ante dui vel neque. Proin sit amet enim quam. Praesent tincidunt imperdiet iaculis. Fusce consectetur quam non ante tempor, a commodo diam viverra. Sed blandit sit amet purus vitae tristique. Quisque pellentesque volutpat semper. Nam pulvinar sem ac magna tristique feugiat. In non ornare felis. Aliquam in turpis nec augue blandit pulvinar in vel odio.'
+        },
+        {
+            title: 'prueba de titulo 6',
+            date: 'pubicado el dia ' + moment().date() + " del mes " + moment().format("MMM") + "en el año " + moment().format("YYYY"),
+            content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis, urna eu aliquam faucibus, tortor ipsum pellentesque arcu, eu vestibulum ante dui vel neque. Proin sit amet enim quam. Praesent tincidunt imperdiet iaculis. Fusce consectetur quam non ante tempor, a commodo diam viverra. Sed blandit sit amet purus vitae tristique. Quisque pellentesque volutpat semper. Nam pulvinar sem ac magna tristique feugiat. In non ornare felis. Aliquam in turpis nec augue blandit pulvinar in vel odio.'
+        },
+    ];
+   posts.forEach((item, index)=>{
+
+        var post = `
+                
+                <article class="post">
+                <h2>${item.title}</h2>
+                <span class="date"> ${item.date}</span>
+                <p>
+                ${item.content}    
+                </p>
+                <a href="#" class="button-more">
+                    Leer mas
+                </a>
+            </article>
+        
+            `;
+
+        $("#posts").append(post);
+
+        });
+   
+    /*
+     
+    */
     
 });
