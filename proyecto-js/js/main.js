@@ -1,4 +1,3 @@
-'use strict'
 
 /*
 en el index pondremos un contenedor global 
@@ -169,4 +168,15 @@ $(document).ready(function(){
     $("#to-blue").click(function(){
         theme.attr("href", "css/blue.css")
     });
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//extra local storage
+if(typeof(Storage) !== 'undefinied'){
+    console.log("localStroage disponible")
+}else{
+   console.log("localStorage incompartible") 
+}
+
+
+////////////////////////////////////////////////////////////////
+    
 });
