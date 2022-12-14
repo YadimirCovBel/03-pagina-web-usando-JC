@@ -168,8 +168,44 @@ $(document).ready(function(){
     $("#to-blue").click(function(){
         theme.attr("href", "css/blue.css")
     });
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-//extra local storage
+
+
+    // boton para scroll hacia arriba web
+
+    $('.subir').click(function(e){
+            //e.preventDefault es para evitar que el link nos 
+            //lleve a otro sitio 
+            //esto funcionara con la e en la funncion de click
+        e.preventDefault();
+            //usamos animate sobre el html y body
+        $('html, body').animate({
+                //se animara scroll top 
+            scrollTop: 0
+                //la animaccion durara 500 milisegundos
+        }, 500);
+            return false;
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//extra local storage tema seleccionado color
 if(typeof(Storage) !== 'undefinied'){
     console.log("localStroage disponible")
 }else{
@@ -178,5 +214,7 @@ if(typeof(Storage) !== 'undefinied'){
 
 
 ////////////////////////////////////////////////////////////////
-    
+*/
+
+
 });
