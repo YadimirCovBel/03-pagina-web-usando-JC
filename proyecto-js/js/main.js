@@ -169,6 +169,7 @@ $(document).ready(function(){
         theme.attr("href", "css/blue.css")
     });
 
+    /////////////////////////////////////////////////////////////////////////
 
     // boton para scroll hacia arriba web
 
@@ -186,35 +187,78 @@ $(document).ready(function(){
             return false;
     });
 
+////////////////////////////////////////////////////////////////////////////////
+
+    // formulario de login falso que permita guardar en 
+    //local storage la sesion
 
 
+$("#login form").submit(function(){
+
+    // con esto tomaremos el valor de nombre
+    // creamos una variable donde se guardara
+    var form_name = $("#form_name").val();
+    //usamos local storage set item para que lo guarde en 
+    //local storage 
+    localStorage.setItem("form_name",form_name);
+
+});
+    //con local storage get item sacamos la informacion 
+    // seleccionamos for name  ya que esta asi guardado
+    // dentro del local storage
+var form_name = localStorage.getItem("form_name");
+    //con este if comprobamos si for_name tiene contenido
+    //de ser asi nos mostrara el mensake de lo contrario
+    // tomara la segunda accion 
+if(form_name != null && form_name != "undefined"){
+
+        //creamos la variable para reutilizar esa direccion id
+var about_p = $("#about p");
+        //con esto tomaremos un div para colocar alli el dato
+        //for_name para que se muestre en la web despues de ser
+        //extraido
+        //tomamos el div about y p de parrafo para despues agregar
+        //html para agregar enla web un mensaje
+    about_p.html("<br><strong>Bienvenido, "+form_name+"</strong>");
+
+        //agregamos el seleccitro de about para  agregar un link para 
+        //cerrar la sesion con el apned se agrego directamente al html
+    about_p.append("<br><a href='#' id='logout'>Cerrar Sesion</a>");
+
+        //con esto seleccionamos el div donde estan los inputs
+        // del formulario y lo ocultamos
+    $("#login").hide();
+
+        //con esto seleccionamos el boton para cerrar sesion que agregamos
+        // al ser seleccionado se borrara el locla storage con .clear
+    $("#logout").click(function(){
+        localStorage.clear();
+        //con location.reload(); logramos que la pagina se vuelva a cargar 
+        //cuando presionen cerrar sesion
+        location.reload();
+    });
 
 
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
+    
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //extra local storage tema seleccionado color
-if(typeof(Storage) !== 'undefinied'){
-    console.log("localStroage disponible")
-}else{
-   console.log("localStorage incompartible") 
-}
+
+
+$("#to-red").submit(function(){
+
+    
+    var tRed = $("#to-red").val();
+
+    localStorage.setItem("tRed",tRed);
+
+});
+ 
+var tRed = localStorage.getItem("tRed");
 
 
 ////////////////////////////////////////////////////////////////
-*/
 
 
 });
