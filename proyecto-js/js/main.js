@@ -92,7 +92,10 @@ Agregamos formulario
 
 $(document).ready(function(){
   /////////////////////////////////////////////////////////////////////////////////
-    //slider
+  //agregamos un if para que carge segun las paginas que 
+  //que requieran el slider
+  if(window.location.href.indexOf('index') > -1){  
+  //slider
     $('.galeria').bxSlider({
         mode: 'fade',
         captions: true,
@@ -100,8 +103,11 @@ $(document).ready(function(){
         pager: true,
 
       });
+    };
 ////////////////////////////////////////////////////////////////////////////////////
-
+ //agregamos un id para que carge segun las paginas que 
+  //que requieran los posts
+  if(window.location.href.indexOf('index') > -1){ 
 
     //posts
     var posts = [
@@ -156,8 +162,9 @@ $(document).ready(function(){
         $("#posts").append(post);
 
         });
+    };
    ///////////////////////////////////////////////////////////////////////////////
-   
+
     // selector de tema
     var theme = $("#theme")
     $("#to-green").click(function(){
@@ -260,6 +267,8 @@ var tRed = localStorage.getItem("tRed");
 
 
 ////////////////////////////////////////////////////////////////
+//Extra separar todas las funciones en ficheros individuales
 
+//////////////////////////////////////////////////////////////////
 */
 });
