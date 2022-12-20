@@ -91,7 +91,7 @@ Agregamos formulario
 */
 
 $(document).ready(function(){
-  
+  /////////////////////////////////////////////////////////////////////////////////
     //slider
     $('.galeria').bxSlider({
         mode: 'fade',
@@ -100,7 +100,7 @@ $(document).ready(function(){
         pager: true,
 
       });
-
+////////////////////////////////////////////////////////////////////////////////////
 
 
     //posts
@@ -156,6 +156,7 @@ $(document).ready(function(){
         $("#posts").append(post);
 
         });
+   ///////////////////////////////////////////////////////////////////////////////
    
     // selector de tema
     var theme = $("#theme")
