@@ -248,6 +248,13 @@ var about_p = $("#about p");
 
 
 }
+///////////////////////////////////////////////////////////////////////////////
+// Acordeon
+//con location href indexOf revisa si el html contiene la palabra indicada 
+if(window.location.href.indexOf('about') > -1){ 
+$("#acordeon").accordion();
+
+};
 
     
 /*    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
