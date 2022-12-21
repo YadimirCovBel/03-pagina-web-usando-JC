@@ -256,17 +256,18 @@ $("#acordeon").accordion();
 
 };
 ////////////////////////////////////////////////////////////////////////////
-
+//Reloj
 //con location href indexOf revisa si el html contiene la palabra indicada 
 if(window.location.href.indexOf('reloj') > -1){ 
 
+var reloj = moment().format('h:mm:ss a');
+
+$("#reloj").html(reloj);
 
 
 
 
-
-
-
+}
 
 
 
