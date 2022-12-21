@@ -255,6 +255,30 @@ if(window.location.href.indexOf('about') > -1){
 $("#acordeon").accordion();
 
 };
+////////////////////////////////////////////////////////////////////////////
+
+//con location href indexOf revisa si el html contiene la palabra indicada 
+if(window.location.href.indexOf('reloj') > -1){ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 /*    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
