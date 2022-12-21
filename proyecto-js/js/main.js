@@ -259,17 +259,19 @@ $("#acordeon").accordion();
 //Reloj
 //con location href indexOf revisa si el html contiene la palabra indicada 
 if(window.location.href.indexOf('reloj') > -1){ 
+    //setInterval hace que cada tanto tiempo se repitan
+    //unas instrucciones
+    setInterval(function(){
+        var reloj = moment().format('h:mm:ss');
 
-var reloj = moment().format('h:mm:ss a');
-
-$("#reloj").html(reloj);
-
+        $("#reloj").html(reloj);
+    
 
 
+
+    }, 1000);
 
 }
-
-
 
 
 
