@@ -237,3 +237,11 @@ footer {
     margin-top: 5px;
      
 }
+.form-error{
+FLOAT: RIGHT;
+FONT-SIZE: 11PX;
+BACKGROUND: RED;
+COLOR: WHITE;
+PADDING: 10PX;
+WIDTH: 65%;
+}
