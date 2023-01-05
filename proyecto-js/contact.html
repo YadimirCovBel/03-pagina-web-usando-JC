@@ -54,12 +54,22 @@
 					<!--cargar formulario-->
                  <h2>Contacto</h2>
                  <form>
-                    <label>Nombre</label>
-                    <label>Apellido</label>
-                    <label>Email</label>
-                    <label>Sexo</label>
-                    <label>Fecha de nacimiento</label>
-                    <label>Edad</label>
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name"/>
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido"/>
+                    <label for="email">Email</label>
+                    <input type="text" name="email"/>
+                    <label for="sex">Sexo</label>
+                    <select name="sex">
+                        <option value="Man">Hombre</option>
+                        <option value="Woman">Mujer</option>
+                    </select>
+                    <label for="date">Fecha de nacimiento</label>
+                    <input type="text" name="date"/>
+                    <label for="years">Edad</label>
+                    <input type="number" name="years"/>
+                    <input type="submit" value="enviar"/>
                  </form>
 				 </div>
 				 <aside id="sidebar">
