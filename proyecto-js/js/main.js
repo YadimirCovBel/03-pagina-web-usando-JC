@@ -272,8 +272,12 @@ if(window.location.href.indexOf('reloj') > -1){
     }, 1000);
 
 }
-
-
+// validacion de datos
+if(window.location.href.indexOf('contact') > -1){ 
+$.validate({
+    lang: 'es'
+  });
+}
 
 
 
