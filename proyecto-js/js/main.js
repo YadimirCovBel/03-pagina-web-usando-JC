@@ -274,6 +274,9 @@ if(window.location.href.indexOf('reloj') > -1){
 }
 // validacion de datos
 if(window.location.href.indexOf('contact') > -1){ 
+$("form input[name='date']").datepicker({
+    dateFormat: 'dd/mm/yy'
+});
 $.validate({
     lang: 'es'
   });
