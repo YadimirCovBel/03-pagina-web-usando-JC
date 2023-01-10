@@ -11,8 +11,9 @@ var bicicleta = {
 //    bicicleta.color = nuevo_color;
         //tambien se realiza usando this
         this.color = nuevo_color;
+        console.log(this);
 }
 
 };
-
-console.log(bicicleta);
+//la funcion cambiaColor permite hacer modificasiones a esa caracteristica
+bicicleta.cambiaColor("azul");
