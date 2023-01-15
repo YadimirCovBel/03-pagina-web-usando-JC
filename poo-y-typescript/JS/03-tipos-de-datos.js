@@ -43,7 +43,6 @@ if (numero1 == 10) {
 }
 ;
 console.log("soy el console fuera del if" + " " + numero1 + " " + numero2);
-;
 //////////////////////////////////////////////////////////////////////////////////////////////////
 console.log(cadena, numero, verdadero_falso, cualquiera, lenguajes, years);
 console.log(cadena2);

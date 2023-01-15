@@ -73,7 +73,7 @@ if(numero1 == 10){
     console.log("soy el console del if"+" "+numero1+" "+numero2);
 };
 
-console.log("soy el console fuera del if"+" "+numero1+" "+numero2));
+console.log("soy el console fuera del if"+" "+numero1+" "+numero2);
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
