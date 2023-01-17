@@ -1,6 +1,9 @@
+"use strict";
 //clase (molde del objeto)
 // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
 //la primera letra 
+exports.__esModule = true;
+exports.Camiseta = void 0;
 var Camiseta = /** @class */ (function () {
     //las propiedades pueden ser public, private o protected
     //public se peude acceder desde cualquier sitio
@@ -12,6 +15,7 @@ var Camiseta = /** @class */ (function () {
     //constructor///    para agregar las propiedades 
     //en el molde se utiliza y despues se agregan
     function Camiseta(color, modelo, marca, talla, precio) {
+        // se agrego el export para poder utilizar esta clase desde el main.ts
         //propiedades (caracteristicas del objeto)
         // en este caso definimos que es una propiedad publica se llamara color
         // y sera tipo string
@@ -35,10 +39,14 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
+exports.Camiseta = Camiseta;
+/* se genera como nota ya que ahora lo usaremos desde main
 // ya teniendo el model (classe) podemos crear objetos con facilidad
-///ya teniendo el constructor simplemente agregamos 
+        ///ya teniendo el constructor simplemente agregamos
 var camiseta = new Camiseta("rojo", "manga larga", "nike", "l", 14);
-camiseta.setColor("Rojo");
+
+camiseta.setColor("Rojo")
+*/
 /*al volver las propiedades de la funcion privada este metodo
 deja de ser funcional y utilizaremos otro
 camiseta.color = "Rojo";
@@ -47,8 +55,11 @@ camiseta.marca = "Nike";
 camiseta.talla = "L";
 camiseta.precio = 10;
 */
+/* se genera como nota ya que ahora lo usaremos desde main
 var playera = new Camiseta("azul", "manga corta", "adidas", "l", 15);
-playera.setColor("Azul");
+
+playera.setColor("Azul")
+*/
 /*al volver las propiedades de la funcion privada este metodo
 deja de ser funcional y utilizaremos otro
 playera.color = "Azul";
@@ -57,4 +68,6 @@ playera.marca = "Adidas";
 playera.talla = "L";
 playera.precio = 15;
 */
+/* se genera como nota ya que ahora lo usaremos desde main
 console.log(camiseta, playera);
+*/ 
