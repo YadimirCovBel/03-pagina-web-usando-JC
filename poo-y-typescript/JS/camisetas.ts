@@ -26,7 +26,8 @@ class Camiseta{
     //metodos (que son funciones o acciones que hara el objeto)
 
 
-        //constructor///    
+        //constructor///    para agregar las propiedades 
+        //en el molde se utiliza y despues se agregan
     
         constructor(color, modelo, marca, talla, precio){
             this.color = color;
@@ -48,7 +49,7 @@ class Camiseta{
 }
 
 // ya teniendo el model (classe) podemos crear objetos con facilidad
-
+        ///ya teniendo el constructor simplemente agregamos 
 var camiseta = new Camiseta("rojo", "manga larga", "nike", "l", 14);
 
 camiseta.setColor("Rojo")

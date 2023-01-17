@@ -9,7 +9,8 @@ var Camiseta = /** @class */ (function () {
     //por lo que no se pueden dar valores desde fuera entonces 
     // se requiere un metodo acontinuacion.
     //metodos (que son funciones o acciones que hara el objeto)
-    //constructor///    
+    //constructor///    para agregar las propiedades 
+    //en el molde se utiliza y despues se agregan
     function Camiseta(color, modelo, marca, talla, precio) {
         //propiedades (caracteristicas del objeto)
         // en este caso definimos que es una propiedad publica se llamara color
@@ -35,6 +36,7 @@ var Camiseta = /** @class */ (function () {
     return Camiseta;
 }());
 // ya teniendo el model (classe) podemos crear objetos con facilidad
+///ya teniendo el constructor simplemente agregamos 
 var camiseta = new Camiseta("rojo", "manga larga", "nike", "l", 14);
 camiseta.setColor("Rojo");
 /*al volver las propiedades de la funcion privada este metodo
