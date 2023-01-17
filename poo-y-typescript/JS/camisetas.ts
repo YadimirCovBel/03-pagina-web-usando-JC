@@ -1,8 +1,16 @@
+//interface definiremos una interface para camiseta
+
+interface CamisetaBase{
+    setColor(color);
+    getColot();
+}
+
+
 //clase (molde del objeto)
 // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
 //la primera letra 
 
-class Camiseta{
+class Camiseta implements CamisetaBase{
 // se agrego el export para poder utilizar esta clase desde el main.ts
 
 

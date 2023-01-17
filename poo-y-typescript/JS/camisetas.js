@@ -1,3 +1,4 @@
+//interface definiremos una interface para camiseta
 //clase (molde del objeto)
 // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
 //la primera letra 
