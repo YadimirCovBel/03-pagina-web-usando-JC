@@ -2,7 +2,7 @@
 
 interface CamisetaBase{
     setColor(color);
-    getColot();
+    getColor();
 }
 
 
@@ -59,6 +59,9 @@ class Camiseta implements CamisetaBase{
     }
 
 }
+
+var camiseta = new Camiseta("asd","asd","asd","asd", 12);
+console.log(camiseta);
 /* se genera como nota ya que ahora lo usaremos desde main
 // ya teniendo el model (classe) podemos crear objetos con facilidad
         ///ya teniendo el constructor simplemente agregamos 

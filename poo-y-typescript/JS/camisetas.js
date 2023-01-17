@@ -37,6 +37,8 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
+var camiseta = new Camiseta("asd", "asd", "asd", "asd", 12);
+console.log(camiseta);
 /* se genera como nota ya que ahora lo usaremos desde main
 // ya teniendo el model (classe) podemos crear objetos con facilidad
         ///ya teniendo el constructor simplemente agregamos
@@ -67,4 +69,4 @@ playera.precio = 15;
 */
 /* se genera como nota ya que ahora lo usaremos desde main
 console.log(camiseta, playera);
-*/ 
+*/
