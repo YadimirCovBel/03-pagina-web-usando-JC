@@ -7,9 +7,10 @@ class Camiseta{
     //propiedades (caracteristicas del objeto)
     // en este caso definimos que es una propiedad publica se llamara color
     // y sera tipo string
-    private color:string ="";
+    private color:string = "";
+    private modelo:string = "";
+    private marca: string = "";
     private talla:string = "";
-    private tipo:string = "";
     // al agregar = "" le definimos que al ejecutar tendra un valor
     private precio:number = 0;
 
@@ -24,7 +25,19 @@ class Camiseta{
 
     //metodos (que son funciones o acciones que hara el objeto)
 
-    public setColor(color){
+
+        //constructor///    
+    
+        constructor(color, modelo, marca, talla, precio){
+            this.color = color;
+            this.modelo = modelo;
+            this.marca = marca;
+            this.talla = talla;
+            this.precio = precio;
+
+        }
+
+        public setColor(color){
         this.color = color;
 
     }
@@ -36,7 +49,7 @@ class Camiseta{
 
 // ya teniendo el model (classe) podemos crear objetos con facilidad
 
-var camiseta = new Camiseta();
+var camiseta = new Camiseta("rojo", "manga larga", "nike", "l", 14);
 
 camiseta.setColor("Rojo")
 
@@ -49,7 +62,7 @@ camiseta.talla = "L";
 camiseta.precio = 10;
 */
 
-var playera = new Camiseta();
+var playera = new Camiseta("azul", "manga corta", "adidas", "l", 15);
 
 playera.setColor("Azul")
 
@@ -62,4 +75,4 @@ playera.talla = "L";
 playera.precio = 15;
 */
 
-console.log(camiseta.getColor(),playera);
+console.log(camiseta, playera);
