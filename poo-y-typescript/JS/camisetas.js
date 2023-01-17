@@ -1,9 +1,6 @@
-"use strict";
 //clase (molde del objeto)
 // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
 //la primera letra 
-exports.__esModule = true;
-exports.Camiseta = void 0;
 var Camiseta = /** @class */ (function () {
     //las propiedades pueden ser public, private o protected
     //public se peude acceder desde cualquier sitio
@@ -39,7 +36,6 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-exports.Camiseta = Camiseta;
 /* se genera como nota ya que ahora lo usaremos desde main
 // ya teniendo el model (classe) podemos crear objetos con facilidad
         ///ya teniendo el constructor simplemente agregamos

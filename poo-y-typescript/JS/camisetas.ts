@@ -2,7 +2,7 @@
 // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
 //la primera letra 
 
-export class Camiseta{
+class Camiseta{
 // se agrego el export para poder utilizar esta clase desde el main.ts
 
 
