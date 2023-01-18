@@ -1,4 +1,19 @@
 //interface definiremos una interface para camiseta
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //clase (molde del objeto)
 // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
 //la primera letra 
@@ -37,8 +52,30 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
+//////////////////////////////////////////////////////////////////////////////////////
+//Herencia una clase hija puede heredar todos los parametros de una clase padre
+//clase hija
+var Sudadera = /** @class */ (function (_super) {
+    __extends(Sudadera, _super);
+    function Sudadera() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Sudadera.prototype.setCapucha = function (capucha) {
+        this.capucha = capucha;
+    };
+    Sudadera.prototype.getCapucha = function () {
+        // agregamos : boolean para que de con el return obligatoriamente un boolean
+        return this.capucha;
+    };
+    return Sudadera;
+}(Camiseta));
+////////////////////////////////////////////////////////////////////////////////////////////////
 var camiseta = new Camiseta("asd", "asd", "asd", "asd", 12);
 console.log(camiseta);
+var sudadera_nike = new Sudadera("rojo", "Manga Larga", "Nike", "l", 30);
+sudadera_nike.setCapucha(true);
+sudadera_nike.setColor("gris");
+console.log(sudadera_nike);
 /* se genera como nota ya que ahora lo usaremos desde main
 // ya teniendo el model (classe) podemos crear objetos con facilidad
         ///ya teniendo el constructor simplemente agregamos

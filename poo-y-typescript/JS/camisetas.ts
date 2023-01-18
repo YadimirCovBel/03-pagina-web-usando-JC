@@ -59,9 +59,33 @@ class Camiseta implements CamisetaBase{
     }
 
 }
+//////////////////////////////////////////////////////////////////////////////////////
+//Herencia una clase hija puede heredar todos los parametros de una clase padre
+//clase hija
+class Sudadera extends Camiseta{
+                //agregando extends y la classe en este caso camiseta
+                // es como definimos una clase padre de la cual se 
+                //tomaran las caracteristicas para la clase hija
 
+    public capucha: boolean;
+
+    setCapucha(capucha: boolean){
+        this.capucha = capucha;
+    }
+    getCapucha():boolean{
+        // agregamos : boolean para que de con el return obligatoriamente un boolean
+
+        return this.capucha;
+    }
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
 var camiseta = new Camiseta("asd","asd","asd","asd", 12);
 console.log(camiseta);
+
+var sudadera_nike = new Sudadera("rojo","Manga Larga", "Nike", "l", 30);
+sudadera_nike.setCapucha(true);
+sudadera_nike.setColor("gris");
+console.log(sudadera_nike);
 /* se genera como nota ya que ahora lo usaremos desde main
 // ya teniendo el model (classe) podemos crear objetos con facilidad
         ///ya teniendo el constructor simplemente agregamos 
