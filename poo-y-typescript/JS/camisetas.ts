@@ -6,6 +6,34 @@ interface CamisetaBase{
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////
+
+//sesion 161 decoradores
+
+function estampar(logo: string){
+    // para crear un decorador se crea una funcion con estampar en este casos era logo: string
+    return function(target: Function){
+        //creamos una funcion dentro de la funcion que tendra target como parametro
+        //esta misma tsera una funcion
+        target.prototype.estampacion = function():void{
+           //al definir un :void indicamos que esta vacio  
+       
+           console.log("camiseta estampada cone l logo de: "+logo);
+        }
+        //despues se agrega target.prototype. y el nombre de la clase
+    }
+}
+        
+        @estampar('Gucci')
+        //despues tenemos que aplicar el decorador a la  clase camiseta para 
+        //aplicarlo debemos poner la @ y el nombre del decorador
+        //un decorador no se cierra con ; ya que de esta manera palicamos el decorador
+        //a la clase siguiente 
+        
+    // un decorador sirve para devolver una cosa o otra, adicionar una funcionalidad a una clase 
+    // o unos meta datos 
+
+//////////////////////////////////////////////////////////////////////////////////////////
 //clase (molde del objeto)
 // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
 //la primera letra 
@@ -81,6 +109,7 @@ class Sudadera extends Camiseta{
 ////////////////////////////////////////////////////////////////////////////////////////////////
 var camiseta = new Camiseta("asd","asd","asd","asd", 12);
 console.log(camiseta);
+camiseta.estampacion();
 
 var sudadera_nike = new Sudadera("rojo","Manga Larga", "Nike", "l", 30);
 sudadera_nike.setCapucha(true);

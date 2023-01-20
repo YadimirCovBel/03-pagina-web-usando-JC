@@ -14,9 +14,26 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-//clase (molde del objeto)
-// la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
-//la primera letra 
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+///////////////////////////////////////////////////////////////////////////////////////////
+//sesion 161 decoradores
+function estampar(logo) {
+    // para crear un decorador se crea una funcion con estampar en este casos era logo: string
+    return function (target) {
+        //creamos una funcion dentro de la funcion que tendra target como parametro
+        //esta misma tsera una funcion
+        target.prototype.estampacion = function () {
+            //al definir un :void indicamos que esta vacio  
+            console.log("camiseta estampada cone l logo de: " + logo);
+        };
+        //despues se agrega target.prototype. y el nombre de la clase
+    };
+}
 var Camiseta = /** @class */ (function () {
     //las propiedades pueden ser public, private o protected
     //public se peude acceder desde cualquier sitio
@@ -50,6 +67,17 @@ var Camiseta = /** @class */ (function () {
     Camiseta.prototype.getColor = function () {
         return this.color;
     };
+    Camiseta = __decorate([
+        estampar('Gucci')
+        //despues tenemos que aplicar el decorador a la  clase camiseta para 
+        //aplicarlo debemos poner la @ y el nombre del decorador
+        //un decorador no se cierra con ; ya que de esta manera palicamos el decorador
+        //a la clase siguiente 
+        //////////////////////////////////////////////////////////////////////////////////////////
+        //clase (molde del objeto)
+        // la funcion debe llamarse igual que el fichero siempre  y  usar mayusculas en 
+        //la primera letra 
+    ], Camiseta);
     return Camiseta;
 }());
 //////////////////////////////////////////////////////////////////////////////////////
@@ -72,6 +100,7 @@ var Sudadera = /** @class */ (function (_super) {
 ////////////////////////////////////////////////////////////////////////////////////////////////
 var camiseta = new Camiseta("asd", "asd", "asd", "asd", 12);
 console.log(camiseta);
+camiseta.estampacion();
 var sudadera_nike = new Sudadera("rojo", "Manga Larga", "Nike", "l", 30);
 sudadera_nike.setCapucha(true);
 sudadera_nike.setColor("gris");
