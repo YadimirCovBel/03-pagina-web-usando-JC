@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cursos',
@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class CursosComponent {
 
-  public titulo: string;
-  public listado: string; 
-
   constructor(){
-    this.titulo = "componente de cursos";
-    this.listado = "listado de los cursos mas populares";
+
   }
+  ngOnInit(){
+
+  }
+
 }

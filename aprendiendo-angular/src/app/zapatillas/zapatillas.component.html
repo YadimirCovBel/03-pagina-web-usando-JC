@@ -1,7 +1,12 @@
 <h2>{{titulo}}</h2>
-<ul>
-    <li>Rebook classic</li>
-    <li>Fila retro</li>
-    <li>adidas yezzy</li>
 
+<ul>
+    <li *ngFor="let deportiva of zapatillas">{{deportiva.nombre}} - <strong>{{deportiva.precio}}</strong></li>
+    <!--ngFor es para que se recorra un array y extraiga la informacion
+    con *ngFor="let deportiva of zapatillas" pedimos que cree una
+    variable por cada iteracion en zapatillas
+
+    despues ya definimos que dato queremos extraer.
+    {{.deportiva.nombre}} 
+    -->
 </ul>

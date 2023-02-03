@@ -1,11 +1,31 @@
+<!--
+<div style="background:{{config.color}}">
+con esto aplicamos color que definimos en el file configuracion.ts
 
-<div>
+pero lo haremos de otra forma ya que en el curso no le agarro con este 
+metodo pero en nuestro caso si se aplico.
+-->
+
+<div [ngStyle]="{
+    'background': config.fondo,
+    'padding': '20px',
+    'border': '5px solid black',
+    'border-color': config.color
+}">
+<!--usando ngStyle aplicamos la variable color del file config tambien 
+  podmeo agregar otros decoradores como padding-->
 <h1>
   Bienvenido a {{title}}!
 </h1>
-<p>
-  vamos a aprender angular !
-</p>
-<videojuego></videojuego>
+<p>{{descripcion}}</p>
+ 
+<!-- comentamos esto para trabajar solo con zapatillas
+  <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
+  <button (click)="ocultarVideojuegos(true)"*ngIf="!mostrar_videojuegos">Mostrar</button>
+
+<videojuego *ngIf="mostrar_videojuegos"></videojuego>
 <cursos></cursos>
+
+-->
+<zapatillas></zapatillas>
 </div>
