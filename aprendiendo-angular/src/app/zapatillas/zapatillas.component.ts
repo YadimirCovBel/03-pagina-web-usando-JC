@@ -50,12 +50,22 @@ export class ZapatillasComponent implements OnInit {
 
     getMarca(){
         alert(this.mi_marca);
-        console.log(this.mi_marca);
     }
 
     addMArca(){
-        this.marcas.push(this.mi_marca);
+         //coloca el trim para quitar los espacios
+         let limpio = this.mi_marca.trim();
+         //verifica si el valor esta repetido
+         if(this.marcas.indexOf(limpio)< 0){
+             this.marcas.push(limpio)
+         }else{
+             alert('valor Existente')
+         }
     }
+
+    borrarMarca(indice:number){
+        this.marcas.splice(indice, 1);
+      } 
 
 
 }
