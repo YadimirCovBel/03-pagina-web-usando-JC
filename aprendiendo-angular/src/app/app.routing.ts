@@ -13,6 +13,7 @@ import { CursosComponent } from './cursos/cursos.component';
 
 const appRoutes: Routes = [
     {path:'',component:HomeComponent},
+    {path:'home',component:HomeComponent},
     {path:'zapatillas', component:ZapatillasComponent},
     {path: 'videojuego', component:VideojuegoComponent},
     {path: 'cursos', component:CursosComponent},

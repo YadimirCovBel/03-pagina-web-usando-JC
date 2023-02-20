@@ -18,8 +18,10 @@ metodo pero en nuestro caso si se aplico.
   Bienvenido a {{title}}!
 </h1>
 <p>{{descripcion}}</p>
+
+<!-- menu de navegacion-->
 <nav>
-  <a routerLink="/">Home</a>
+  <a routerLink="/home" [routerLinkActive]="['active']">Home</a>
   &nbsp;
   <!--&nbsp; es para hacer una separacion o esapcio 
   
@@ -27,15 +29,13 @@ metodo pero en nuestro caso si se aplico.
     navegacion funcionara adecuadamente
 
   -->
-  <a routerLink="/zapatillas">Zapatillas</a>
+  <a routerLink="/zapatillas" [routerLinkActive]="['active']">Zapatillas</a>
   &nbsp;
-  <a routerLink="/videojuego">VideoJuegos</a>
+  <a routerLink="/videojuego" [routerLinkActive]="['active']">VideoJuegos</a>
   &nbsp;
-  <a routerLink="/cursos">Cursos</a>
-
-
+  <a routerLink="/cursos" [routerLinkActive]="['active']">Cursos</a>
 </nav>
- 
+<hr> 
 <!-- comentamos esto para trabajar solo con zapatillas
   <button (click)="ocultarVideojuegos(false)" *ngIf="mostrar_videojuegos">Ocultar</button>
   <button (click)="ocultarVideojuegos(true)"*ngIf="!mostrar_videojuegos">Mostrar</button>
@@ -45,5 +45,6 @@ metodo pero en nuestro caso si se aplico.
 
 
 <zapatillas></zapatillas>-->
+
 <router-outlet></router-outlet>
 </div>
