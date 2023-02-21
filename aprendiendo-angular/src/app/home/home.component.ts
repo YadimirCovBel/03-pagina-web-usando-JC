@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  public identificado: boolean;
+
+  constructor(){
+    this.identificado = false;
+  }
+  
+  setIdentificado(){
+    this.identificado = true;
+  }
+
+  unsetIdentificado(){
+    this.identificado = false;
+  }
+
 
 }
