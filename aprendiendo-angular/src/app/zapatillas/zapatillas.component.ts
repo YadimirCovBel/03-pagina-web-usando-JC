@@ -1,33 +1,31 @@
 import { Component, OnInit } from "@angular/core";
 import { zapatilla } from "../models/zapatilla";
+import { ZapatillaService } from "../services/zapatilla.service";
 
 @Component({
     selector: 'zapatillas',
-    templateUrl: './zapatillas.component.html'
+    templateUrl: './zapatillas.component.html',
+    providers: [ZapatillaService]
 
 })
 
 export class ZapatillasComponent implements OnInit {
-    public titulo: string;
-    public zapatillas: Array<zapatilla>;
+    public titulo: string = "Componente de zapatillas";
+    public zapatillas!: Array<zapatilla>;
     public marcas: string[];
     public color: string;
     public mi_marca: string;
 
-    constructor(){
+    constructor(
+        private _zapatillaService: ZapatillaService
+    ){
 
         this.color = 'blue';
         this.marcas = new Array();
         this.titulo = "componente de zapatillas";
         //  al tener definido el molde zapatilla  y agregarlo 
         //como array  tenemos que ingresar lo en el constructor 
-        this.zapatillas = [
-            new zapatilla('AirMax', 'nike', 'roja', 40, true ),
-            new zapatilla('rebook clasic', 'rebook', 'blanco', 80, true ),
-            new zapatilla('runner', 'nike', 'negro', 60, true ),
-            new zapatilla('jordan', 'nike', 'negro', 200, false ),
-            new zapatilla('yizze', 'adidas', 'gris', 180, true )
-        ];
+        
         this.mi_marca = "fila";
 
 
@@ -35,7 +33,8 @@ export class ZapatillasComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.zapatillas);
+        this.zapatillas = this._zapatillaService.getZapatillas();
+        alert(this._zapatillaService.getTexto());
         this.getMarcas();
     }
     getMarcas(){
