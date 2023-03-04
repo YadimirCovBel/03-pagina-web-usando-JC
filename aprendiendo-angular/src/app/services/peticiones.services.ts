@@ -10,7 +10,7 @@ export class PeticionesService{
     ){
         this.url = "https://reqres.in/";
     }
-    getUser(userId: any): Observable<any>{
-        return this._http.get(this.url+"api/users/1"+userId);
+    getUser(user: any): Observable<any>{
+        return this._http.get(this.url+"api/users/"+ user);
     }
 }

@@ -1,9 +1,13 @@
+{{fecha | date: 'dd/MM/yy'}}<br>
+{{fecha | date: 'fullDate'}}
+
+<hr>
 <input type="text"[(ngModel)]="userId" (keyup.enter)="cargaUsuario()"/>
 
 <div *ngIf="!userId">
     Cargando...
 </div>
 <div *ngIf="userId">
-    <img src="{{userId.avatar}}" width="200px"/>
+    <img src="{{user.avatar}}" width="200px"/>
     <h2>{{userId.first_name+ ' '+ userId.last_name}}</h2>
 </div>
