@@ -1,16 +1,23 @@
 <h2>Contacto</h2>
 
-<form>
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre"/>
-    <br>
-    <label for="apellido">Apellido</label>
-    <input type="text" name="apellido"/>
-    <br>
-    <label for="email">Email</label>
-    <input type="text" name="email"/>
-    <br>
-    <label for="mensaje">Mensaje</label>
-    <textarea name="mensaje"></textarea>
+<form #formContacto="ngForm" (ngSubmit)="onSubmit()">
+    <label for="nombre">Nombre</label><br/>
+    <!--con las # definimos cambos de variable angular-->
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre"/>
+    <br/>
+
+    <label for="apellido">Apellido</label><br/>
+    <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="usuario.apellido"/>
+    <br/>
+
+    <label for="email">Email</label><br/>
+    <input type="text" name="email" #email="ngModel" [(ngModel)]="usuario.email"/>
+    <br/>
+
+    <label for="mensaje">Mensaje</label><br/>
+    <textarea name="mensaje" #mensaje="ngModel" [(ngModel)]="usuario.mensaje"></textarea>
+    <br/>
+
+    <input type="submit" value="Enviar"/>
 
 </form>
