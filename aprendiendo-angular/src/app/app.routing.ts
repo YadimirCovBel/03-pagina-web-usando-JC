@@ -9,6 +9,7 @@ import { ZapatillasComponent } from './zapatillas/zapatillas.component';
 import { VideojuegoComponent } from './videojuego/videojuego.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ExternoComponent } from './externo/externo.component';
+import { ContactoComponent } from './contacto/contacto.component';
 //array de rutas
 
 const appRoutes: Routes = [
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     // para pasar parametros por url se agrega en el path con /: y lo que se busca pasar
     // en este caso sera /:nombre
     {path: 'externo', component:ExternoComponent},
+    {path: 'contacto', component:ContactoComponent},
     {path: '**', component:HomeComponent}
     //usamos el Json para 
     //indicar que ruta path por ejemplo contato
