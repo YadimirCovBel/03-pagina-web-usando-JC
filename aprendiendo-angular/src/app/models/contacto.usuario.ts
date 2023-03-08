@@ -1,4 +1,4 @@
-export class Usuario {
+export class ContactoUsuario {
     constructor(
         //propiedades
         public nombre: string,
@@ -6,6 +6,6 @@ export class Usuario {
         public email: string,
         public mensaje: string
     ){
-        
+
     }
 }
