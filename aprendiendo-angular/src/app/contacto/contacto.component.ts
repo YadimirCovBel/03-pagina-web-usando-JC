@@ -1,3 +1,4 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ContactoUsuario } from '../models/contacto.usuario';
 
@@ -17,9 +18,9 @@ export class ContactoComponent implements OnInit{
     
   }
 
-  onSubmit(){
-    console.log("evento submit lanzado!");
+  onSubmit(formContacto:any){
     console.log(this.usuario)
+    formContacto.resetForm();
   }
 
 
