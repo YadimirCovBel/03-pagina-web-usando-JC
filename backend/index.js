@@ -10,6 +10,8 @@ mongoose.connect('mongodb://localhost:27017/portafolio')
         console.log("conexion a la base de datos establecida...satisfactoriamente");
     
         //Creasion de Servidor
-    
+        app.listen(port,()=>{
+            console.log("servidor corriendo de forma correcta en la url: localhost:3700")
+        });
     })
     .catch(err => console.log(err));  
