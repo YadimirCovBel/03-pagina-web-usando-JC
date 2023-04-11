@@ -17,6 +17,13 @@ app.use(bodyParser.json());
 //CORS
 
 //RUTAS
+app.get('/', (req, res) => {
+    //req request datos que puedo enviar desde el cliente
+    //res responce la respuesta que se enviara 
+    res.status(200).send(
+       "<h1>Pagina de Inicio</h1>"
+    );
+});
 app.get('/test', (req, res) => {
     //req request datos que puedo enviar desde el cliente
     //res responce la respuesta que se enviara 
