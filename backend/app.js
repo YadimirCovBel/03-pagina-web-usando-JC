@@ -24,9 +24,11 @@ app.get('/', (req, res) => {
        "<h1>Pagina de Inicio</h1>"
     );
 });
-app.get('/test', (req, res) => {
+app.post('/test', (req, res) => {
     //req request datos que puedo enviar desde el cliente
     //res responce la respuesta que se enviara 
+    console.log(req.body.nombre);
+    console.log(req.query.web);
     res.status(200).send({
         message: "hola Mundo desde mi API de NodeJS"
     });
