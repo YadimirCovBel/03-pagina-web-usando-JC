@@ -7,6 +7,8 @@ var app = express();
 
 //Cargar Archivos de rutas
 
+var project_routes = require('./routes/project');
+
 //middlewares
 
 app.use(bodyParser.urlencoded({extended:false}));
