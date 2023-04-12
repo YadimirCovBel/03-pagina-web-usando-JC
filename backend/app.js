@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 //CORS
 
 //RUTAS
-
+app.use('/api', project_routes);
 
 
 
