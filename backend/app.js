@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 
 //RUTAS
 app.use('/api', project_routes);
+//con esto cambiamos la ruta agregandole /api o cualquier cosa que se desee completando la ruta que se estan importandodesde prokect.js routes
 
 
 
