@@ -2,10 +2,16 @@
 
 var controller = {
 
-    home:function(){
+    home:function(req, res){
+        return res.status(200).send({
+            message: 'soy la home'
+        })
 
     },
-    test: function(){
+    test: function(req, res){
+        return res.status(200).send({
+            message: 'soy el metodo o accion test del controlador de project'
+        })
 
     },
 
