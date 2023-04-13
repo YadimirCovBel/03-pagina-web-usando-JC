@@ -6,7 +6,7 @@ var ProjectController = require('../controllers/project');
 var router = express.Router();
 
 router.get('/home', ProjectController.home);
-router.get('/test', ProjectController.test)
+router.post('/test', ProjectController.test);
 //requerimos que utilice el objeto ProjectController y acceda al metodo home
-
+router.post('/save-project', ProjectController.saveProject);
 module.exports = router;

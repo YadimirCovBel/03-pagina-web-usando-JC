@@ -16,7 +16,12 @@ var controller = {
     },
 
     saveProject: function(req, res){
+        var project = new Project();
 
+        return res.status(200).send({
+            message: "Metodo saveProject"
+            
+        })
     }
 
 };
