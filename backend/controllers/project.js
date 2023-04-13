@@ -42,7 +42,7 @@ var controller = {
         });
             */
 
-        //nuevo metodo
+        //nuevo metodo se tubo que usar un try y un catch para que funcionara 
         try{
             await project.save();
             return res.status(200).send({
