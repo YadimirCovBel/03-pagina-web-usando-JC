@@ -1,5 +1,5 @@
 'use strict'
-
+var Project = require('../models/project')
 var controller = {
 
     home:function(req, res){
@@ -14,6 +14,10 @@ var controller = {
         })
 
     },
+
+    saveProject: function(req, res){
+
+    }
 
 };
 
