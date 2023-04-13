@@ -8,8 +8,9 @@ var ProjectSchema = Schema({
     name:String,
     description:String,
     categoty:String,
-    lang:[String],
-    year:Number
+    year:Number,
+    lang:String,
+    image: String
 });
 
 module.exports = mongoose.model('projects', ProjectSchema);
