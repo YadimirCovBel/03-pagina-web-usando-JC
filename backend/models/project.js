@@ -16,3 +16,4 @@ var ProjectSchema = Schema({
 module.exports = mongoose.model('projects', ProjectSchema);
 // projects --> guarda los documentos en la coleccion
 // definimos el nombre de la coleccion donde se guardara la informacion y despues que variables se agregaran lo cual se definio con ProjectSchema
+//
