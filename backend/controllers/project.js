@@ -23,19 +23,23 @@ var controller = {
         project.description= params.description;
         project.categoty= params.categoty;
         project.lang= params.lang;
-        project.year= params.year;
+        project.year = params.year;
         project.image = null;
+
+        project.save((err, projectStored)=>{
+            if(err)return res.status(500).send({message: 'Error al guardar el documento.'})
+            
+            if(!projectStored)return res.status(404).send({message: 'nose ha podido guardar el proyecto.'});
+
+            return res.status(200).send({project: projectStored});
+        
+        });
 
        
 
 
-        return res.status(200).send({
-            params: params,
-            message: "Metodo saveProject"
-
-        })
     }
 
 };
 
-module.exports =controller;
+module.exports = controller;
