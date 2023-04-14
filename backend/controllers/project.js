@@ -57,6 +57,10 @@ var controller = {
         getProject: function(req, res){
                 var projectId = req.params.id;
 
+                if(projectId == null){return res.save(404).send({message: 
+                    'el proyecto no existe.'});
+                }
+
                 Project.findById(projectId, (err, project)=>{
                     if(err) return res.status(500).send({message: 'error al devolver los datos'});
                     if(!project) return res.save(404).send({message: 'el proyecto no existe.'});
