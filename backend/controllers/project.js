@@ -54,21 +54,31 @@ var controller = {
         }
     },
 
-        getProject: function(req, res){
+        getProject: async function(req, res){
                 var projectId = req.params.id;
 
-                if(projectId == null){return res.save(404).send({message: 
+                if(projectId == null) return res.status(404).send({message: 
                     'el proyecto no existe.'});
-                }
-
+                
+                    try{
+                        const project = await Project.findById(projectId);
+                        if(!project) return res.status(404).send({message:
+                             'el proyecto no existe'});
+                        return res.status(200).send({project});
+                    } catch (err) {
+                        return res.status(500).send({message: 
+                            'error al devolver los datos'});
+                    }
+                  /* codigo que ya no funciona en la actualidad  2023  
                 Project.findById(projectId, (err, project)=>{
-                    if(err) return res.status(500).send({message: 'error al devolver los datos'});
+                   if(err) return res.status(500).send({message: 'error al devolver los datos'});
                     if(!project) return res.save(404).send({message: 'el proyecto no existe.'});
                     return res.status(200).send({
                         project
                     });
  
-                });
+                //});
+                */
         }
 };
 
