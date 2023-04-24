@@ -114,6 +114,16 @@ var controller = {
             });
                 */
             },
+
+            updateProject: function(req, res){
+                
+                var projectId = req.params.id;
+                var update = req.body;
+
+                project.findByIdAndUpdate(projectId,update, (err, projectUpdated) => {
+
+                });
+            },
           
 };
 
