@@ -119,10 +119,36 @@ var controller = {
                 
                 var projectId = req.params.id;
                 var update = req.body;
+                try{
+                project.findByIdAndUpdate(projectId, update, (err, projectUpdated) =>{
+                    if(!projectUpdated) return res.status(404).send({message: 'no existe el proyecto para actualzar'})
+                    return res.status(200).send({ project: projectUpdated});
+                })
+                }catch (err) {
+                    if(err) return res.status(500).send({message: 'error al actualizar'})
+                    
+                }
+                
+                /*
+                no esta funcionando
+                //primera forma del curso
 
-                project.findByIdAndUpdate(projectId,update, (err, projectUpdated) => {
+                
 
-                });
+
+
+                //segundo intento
+                if(projectUpdated == null) return res.status(404).send({message: 
+                    'el proyecto no existe.'});
+                try{
+                    project.findByIdAndUpdate(projectId,update, (projectUpdated) =>
+                    return res.status(200).send({
+                        project: projectUpdated
+                    })
+                }catch(err){
+                    return res.status(500).send({message:'error al actualizar'});
+                   };
+                   */
             },
           
 };
