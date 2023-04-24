@@ -10,4 +10,5 @@ router.post('/test', ProjectController.test);
 //requerimos que utilice el objeto ProjectController y acceda al metodo home
 router.post('/save-project', ProjectController.saveProject);
 router.get('/project/:id?', ProjectController.getProject);
+router.get('/projects', ProjectController.getProjects);
 module.exports = router;

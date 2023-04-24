@@ -15,6 +15,7 @@ var controller = {
         });
 
     },
+    //controller de proyect
 
     saveProject: async function(req, res){
         var project = new Project();
@@ -24,7 +25,7 @@ var controller = {
     
         project.name = params.name;
         project.description= params.description;
-        project.categoty= params.categoty;
+        project.category= params.category;
         project.lang= params.lang;
         project.year = params.year;
         project.image = null;
@@ -79,7 +80,41 @@ var controller = {
  
                 //});
                 */
-        }
+        },
+
+       
+        getProjects: async function (req, res){
+           try{
+            project.find({}).sort('+year')
+            .then((projects)=>{
+                return res.status(200).send({projects})
+            })
+            //probando
+            //.apply((projects) => {
+              //  return res.status(200).send({projects})
+            //});
+            } catch (err) {
+                return res.status(404).send({
+                    message: 'error'
+                });
+            }
+
+
+            /*    no funciona 
+
+              getProjects: async function (req, res){
+         
+            Project.find({}).exec((err, projects) =>{
+                if(err) return res.status(500).send({message: 
+                    'error al devolver los datos.'});
+                if(!project) return res.status(404).send({message: 
+                    'no hay projectos que mostrar.'})
+
+                return res.status(200).send({projects})
+            });
+                */
+            },
+          
 };
 
 module.exports = controller;
