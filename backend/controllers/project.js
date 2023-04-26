@@ -115,22 +115,41 @@ var controller = {
                 */
             },
 
-            updateProject: function(req, res){
+            updateProject: async function(req, res){
                 
                 var projectId = req.params.id;
                 var update = req.body;
-                try{
-                project.findByIdAndUpdate(projectId, update, (err, projectUpdated) =>{
-                    if(!projectUpdated) return res.status(404).send({message: 'no existe el proyecto para actualzar'})
-                    return res.status(200).send({ project: projectUpdated});
-                })
-                }catch (err) {
-                    if(err) return res.status(500).send({message: 'error al actualizar'})
-                    
-                }
-                
+
+              //nueva prueba
+            
+             project.findByIdAndUpdate(projectId, update, {new:true})
+             .then((projectUpdate)=>{
+                return res.status(200).send({project: projectUpdate})
+             })
+             .catch(()=>{
+                return res.status(404).send({message: 
+                    'Proyecto no econtrado para actualizar'});
+             })  
+        },
                 /*
+
                 no esta funcionando
+
+                
+                 project.findByIdAndUpdate(projectId, update, {new:true}, (err, projectUpdated) => {
+
+                    if(err) {return res.status(500).send({message: 'error al actualizar'});}
+
+                    if(!projectUpdated){return res.status(404).send({message: 'no existe el proyecto para actualzar'});}                    
+              
+                   else{ return res.status(200).send({ project: projectUpdated});}
+
+                try{
+            project.find({}).sort('+year')
+            .then((projects)=>{
+                return res.status(200).send({projects})
+            })
+
                 //primera forma del curso
 
                 
@@ -149,7 +168,7 @@ var controller = {
                     return res.status(500).send({message:'error al actualizar'});
                    };
                    */
-            },
+           
           
 };
 
