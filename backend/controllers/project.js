@@ -196,7 +196,7 @@ var controller = {
         */
     },
     
-    uploadImage: function(req,res){
+     uploadImage: async function(req,res){
         var projectId = req.params.id;
         var fileName = 'imagen no subida...';
 
@@ -204,17 +204,24 @@ var controller = {
             var filesPath = req.files.image.path;
             var fileSplit = filesPath.split( '/')
             var fileName = fileSplit[1];
-        
-            return res.status(200).send( {
-                files: fileName
-            });
-        }else{
-            return res.status(200).send( {
-                message: fileName
-            });
-        }
-    }
-          
+            try{
+         const projectUpdate = await Project.findByIdAndUpdate( 
+            projectId, {image: fileName}, {new: true});
+                        
+                          return res.status(200).send({
+                                project: projectUpdate}); 
+                    } catch{
+                        if(!projectUpdate) return res.status(404).send({message: 
+                            'No se pudo encontrar el proyecto subir la imagen.'});
+                        if(err) return res.status(500).send({message: 
+                        'La imagen no se ha subido.'});
+         
+                    }
+            };
+        },
+//cierre controller      
+
+
 };
 
 module.exports = controller;
