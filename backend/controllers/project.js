@@ -195,7 +195,22 @@ var controller = {
         })
         */
     },
-           
+    
+    uploadImage: function(req,res){
+        var projectId = req.params.id;
+        var fileName = 'imagen no subida...';
+
+        if(req.files){
+        
+            return res.status(200).send( {
+                files: req.files
+            });
+        }else{
+            return res.status(200).send( {
+                message: fileName
+            });
+        }
+    }
           
 };
 
