@@ -17,6 +17,6 @@ router.get('/project/:id?', ProjectController.getProject);
 router.get('/projects', ProjectController.getProjects);
 router.put('/project/:id', ProjectController.updateProject);
 router.delete('/project/:id', ProjectController.deleteProject);
-router.post('/upload-image/:id', ProjectController.uploadImage);
+router.post('/upload-image/:id', multipartMiddleware, ProjectController.uploadImage);
 //put es para la actualizacion de recursos en un api
 module.exports = router;
