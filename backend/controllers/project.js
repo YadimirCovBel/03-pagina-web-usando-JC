@@ -168,6 +168,33 @@ var controller = {
                     return res.status(500).send({message:'error al actualizar'});
                    };
                    */
+
+    deleteProject: function(req, res){
+        var projectId = req.params.id;
+ 
+        Project.findByIdAndDelete(projectId)
+        .then((projectRemoved) => {
+            return res.status(200).send({
+                project: projectRemoved
+            })
+        })
+        .catch((err, projectRemoved) =>{
+            if(err) return res.status(500).send({message: 'No se pudo eliminar el proyecto.'});
+ 
+            if(!projectRemoved) return res.status(404).send({message: 'No se pudo encontrar el proyecto para ser eliminado.'});
+        })
+
+        /*no funciona
+        project.findByIdAndDelete(projectId, (err, projectDelete)=> {
+            if(err) return res.status(500).send({message: 'no se ha podido borrar el proyecto '});
+            if(!projectDelete) return res.status(404).send({message: 'No se puede eliminar ese proyecto'});
+            return res.status(200).send({
+                project: projectDelete
+            })
+
+        })
+        */
+    },
            
           
 };
