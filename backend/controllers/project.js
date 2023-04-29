@@ -1,6 +1,9 @@
 'use strict'
 const project = require('../models/project');
 var Project = require('../models/project')
+var fs = require('fs');
+
+
 var controller = {
 
     home:function(req, res){
@@ -202,21 +205,34 @@ var controller = {
 
         if(req.files){
             var filesPath = req.files.image.path;
-            var fileSplit = filesPath.split( '/')
+            var fileSplit = filesPath.split( '/');
             var fileName = fileSplit[1];
-            try{
-         const projectUpdate = await Project.findByIdAndUpdate( 
-            projectId, {image: fileName}, {new: true});
-                        
-                          return res.status(200).send({
-                                project: projectUpdate}); 
+            var extSplit = fileName.split('.');
+            var fileExt =  extSplit[1];
+            
+            if(fileExt=='png' || fileExt=='jpg' || fileExt=='jpeg' || fileExt=='gif'){
+
+                try{
+                    const projectUpdate = await Project.findByIdAndUpdate( 
+                        projectId, {image: fileName}, {new: true});        
+                            return res.status(200).send({project: projectUpdate}); 
                     } catch{
                         if(!projectUpdate) return res.status(404).send({message: 
                             'No se pudo encontrar el proyecto subir la imagen.'});
                         if(err) return res.status(500).send({message: 
                         'La imagen no se ha subido.'});
-         
+                        
+        
                     }
+
+            }else{
+                /*no funciona*/
+                    fs.unlink(filesPath,(err)=>{
+                        return res.status(200).send({message: 'la extension no es valida;'})
+                    });
+                    
+            }
+           
             };
         },
 //cierre controller      
