@@ -226,10 +226,19 @@ var controller = {
                     }
 
             }else{
-                /*no funciona*/
-                    fs.unlink(filesPath,(err)=>{
-                        return res.status(200).send({message: 'la extension no es valida;'})
-                    });
+                try{ 
+                    fs.unlink(filesPath)
+                }catch(err){
+                    return res.status(200).send({message: 'la extension no es valida;'})
+                    
+                }
+                /*no funciona
+                
+                fs.unlink(filePath,(err)=>{
+                    return res.status(200).send({message:'la extencion no es valida});
+                })
+                */
+
                     
             }
            
