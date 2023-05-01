@@ -1,5 +1,5 @@
 import { ModuleWithProviders } from "@angular/core";
-import { Route, RouterModule } from "@angular/router";
+import { Routes, RouterModule } from "@angular/router";
 
 import { AboutComponent } from './components/about/about.component';
 import { ProjectsComponent } from './components/projects/projects.component';
@@ -17,3 +17,6 @@ const appRoutes : Routes = [
     {path: '**', component: ErrorComponent}
     
 ];
+
+export const appRoutingProviders: any[] = [];
+export const routing: ModuleWithProviders<any> = RouterModule.forRoot(appRoutes);
