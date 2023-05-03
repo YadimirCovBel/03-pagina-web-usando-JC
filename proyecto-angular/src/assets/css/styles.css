@@ -1,3 +1,4 @@
+/*importamos fuentes custom*/
 @font-face {
     font-family: "yanone";
     src: url(./fonts/yanone.ttf);
@@ -7,6 +8,12 @@
     font-family: "finger";
     src: url(./fonts/finger.ttf);
 }
+/*Estilos generales*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+  }
 
 body{
 font-family: "yanone",Arial, Helvetica, sans-serif;
