@@ -39,7 +39,7 @@ header{
 
 header ul{
     display: block;
-    width: 750px;
+    width: 38%;
     height: inherit;
     margin: 0px auto;
 }
@@ -58,4 +58,12 @@ header a{
     text-decoration: none;
     color: white;
     transition: all 300ms;
+}
+
+header a:hover{
+    background: rgba(0, 0, 0, 0.8);
+}
+
+header #logo a:hover{
+    background: transparent;
 }
