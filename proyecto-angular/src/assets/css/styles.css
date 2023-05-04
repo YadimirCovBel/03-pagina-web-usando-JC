@@ -63,7 +63,7 @@ header a{
 header a:hover{
     background: rgba(0, 0, 0, 0.8);
 }
-
+/* agregamos este header #logo para que no se ponga negro cuando le pasas el mouse por encima*/
 header #logo a:hover{
     background: transparent;
 }
