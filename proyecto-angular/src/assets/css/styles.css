@@ -42,12 +42,13 @@ header ul{
     width: 38%;
     height: inherit;
     margin: 0px auto;
+    margin-top: -3px;
 }
 header li{
     display: inline-block;
     margin: 0px auto;
     text-align: center;
-    line-height: 90px;
+    line-height: 80px;
 }
 
 header a{
@@ -63,7 +64,20 @@ header a{
 header a:hover{
     background: rgba(0, 0, 0, 0.8);
 }
-/* agregamos este header #logo para que no se ponga negro cuando le pasas el mouse por encima*/
+/*logo tipo */
+#logo{
+    font-family: "finger";
+    font-size: 30px;
+
+}
+#logo a{
+    transition: color 500ms, transform 500ms;
+}
+/* agregamos este header #logo para que no se ponga negro cuando le pasas el mouse por encima
+    cuando se le pasa el mouse encima incrementa size y cambia de color
+*/
 header #logo a:hover{
     background: transparent;
+    color: black;
+    transform: scale(1.50, 1.50);
 }
