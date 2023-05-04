@@ -103,3 +103,19 @@ header #logo a:hover{
     padding-top: 15px;
     color: rgba(0, 0, 0, 0.5);
  }
+
+ /*maquetasion de sobre mi*/
+ #title{
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+ }
+
+ #title h1{
+    font-family: "finger";
+    font-size: 60px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom:  5px;
+ }
