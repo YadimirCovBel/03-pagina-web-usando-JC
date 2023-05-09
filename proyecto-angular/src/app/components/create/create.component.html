@@ -4,30 +4,42 @@
         <form #projectForm="ngForm" (ngSubmit)="onSubmit(project)">
             <p>
                 <label for="name">Nombre</label>
-                <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name">
-             </p>  
+                <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required>
+                <span class="form_error" *ngIf="name.touched && !name.valid">
+                    Ingresar nombre es obligatorio
+                </span>
+                </p>  
             <p>   
                 <label for="description">Descripsion</label>
-                <textarea name="description" #description="ngModel" [(ngModel)]="project.description"></textarea>
+                <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required></textarea>
+                <span class="form_error" *ngIf="description.touched && !description.valid">
+                    Ingresar descripsion es obligatorio
+                </span>
                 </p>
             <p>
                 <label for="category">Categoria</label>
-                <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category">
-             </p>   
+                <input type="text" name="category" #category="ngModel" [(ngModel)]="project.category" required>
+                <span class="form_error" *ngIf="category.touched && !category.valid">
+                    Ingresar categoria es obligatorio
+                </span>
+                </p>   
             <p> 
                 <label for="year">fecha lanzamiento</label>
-                <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year">
+                <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year" >
                 </p>
             <p>   
                 <label for="lang">lenguajes utilizados </label>
-                <input type="text" name="lang" #lang="ngModel" [(ngModel)]="project.lang">
+                <input type="text" name="lang" #lang="ngModel" [(ngModel)]="project.lang" required>
+                <span class="form_error" *ngIf="lang.touched && !lang.valid">
+                    Ingresar lenguajes es obligatorio
+                </span>
                 </p>
             <p>
                 <label for="image">Imagen del proyecto</label>
-                <input type="file" name="image" placeholder="Subir Imagen">
+                <input type="file" name="image" placeholder="Subir Imagen" >
             </p>
 
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid">
             
         </form>
 
