@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
      public _id: string,
         public name: string,
         public description: string,
-        public category: string,
+        public categoty: string,
         public year:Number,
         public lang:String,
         public image: String*/ 
@@ -34,6 +34,16 @@ export class CreateComponent implements OnInit {
   }
   onSubmit(form:any){
     console.log(this.project)
+    this._projectService.saveProject(this.project).subscribe(
+        response => {
+            console.log(response);
+        }, 
+        error => {
+          console.log(<any>error);
+        }
+      );
+    
+      
   }
 
 }

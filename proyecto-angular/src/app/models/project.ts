@@ -3,12 +3,10 @@ export class Project{
         public _id: string,
         public name: string,
         public description: string,
-        public category: string,
-        public year:Number,
-        public lang:String,
-        public image: String
-    ){
-     
-    }
+        public categoty: string,
+        public year: number,
+        public lang: string,
+        public image: string
+    ){ }
 }
 
