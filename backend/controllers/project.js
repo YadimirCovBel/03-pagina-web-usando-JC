@@ -28,7 +28,7 @@ var controller = {
     
         project.name = params.name;
         project.description= params.description;
-        project.category= params.category;
+        project.categoty= params.categoty;
         project.lang= params.lang;
         project.year = params.year;
         project.image = null;
