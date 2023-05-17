@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+//agregando ngform a ver si funciona si no borramos
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
 import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/services/project.service';
 
@@ -12,11 +16,9 @@ export class CreateComponent implements OnInit {
 
   public title: string;
   public project: Project;
-  public status: string;
+  public status: string|undefined;
 
-  constructor(
-    private _projectService: ProjectService
-  ){
+  constructor(private _projectService: ProjectService){
     this.title="Creat proyecto"
     this.project= new Project('','','','',2023,'','');
     this.status= "";
@@ -30,13 +32,25 @@ export class CreateComponent implements OnInit {
       public image: String*/ 
     
   }
-  ngOnInit(): void {
-    
-  }
-  onSubmit(form:any){
+  ngOnInit(): void {}
+  onSubmit(projectForm:NgForm){
+    // probaremos con otra opcion si no lo volvemos a poner onSubmit(form:any){
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////
+
     console.log(this.project)
-    this._projectService.saveProject(this.project).subscribe({
-        next:(response) => {
+    this._projectService.saveProject(this.project).subscribe(
+         (response: any) => {
+        this.status = 'success';
+        console.log(response.project._id);
+      },
+      (error: any) => {
+        console.error(error);
+      }
+
+
+      /* probaremos otro codigo por que con este no esta arrojando la informacion requerida
+      {next:(response) => {
             if(response.project){
               this.status = "success";
             }else{
@@ -49,7 +63,9 @@ export class CreateComponent implements OnInit {
           console.log(<any>error);
         }
         
-    });
+    }
+    */
+    );
   }
 
 }
