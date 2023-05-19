@@ -20,9 +20,9 @@ export class ProjectService{
     }
     saveProject(project:Project):Observable<any>{
             let params = JSON.stringify(project);
-            let heders = new HttpHeaders().set('content-type','application/json')
+            let headers = new HttpHeaders().set('Content-Type', 'application/json');
 
-            return this._http.post(this.url+'/save-project',params, {headers:heders});
+            return this._http.post(this.url+'save-project',params, {headers:headers});
     }
     /*retomamos de la clase 194 la estructura usuada en petitiones.services.ts dentro 
     del folder aprendiendo agular peticiones.services.ts 

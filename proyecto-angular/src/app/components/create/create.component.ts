@@ -18,8 +18,8 @@ export class CreateComponent implements OnInit {
   public project: Project;
   public status: string|undefined;
 
-  constructor(private _projectService: ProjectService){
-    this.title="Creat proyecto"
+   constructor(private _projectService: ProjectService){
+    this.title="Crear proyecto"
     this.project= new Project('','','','',2023,'','');
     this.status= "";
     /*
@@ -38,16 +38,17 @@ export class CreateComponent implements OnInit {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
-    console.log(this.project)
-    this._projectService.saveProject(this.project).subscribe(
-         (response: any) => {
+    
+    this._projectService.saveProject(this.project).subscribe({
+         next:(response: any) => {
         this.status = 'success';
-        console.log(response.project._id);
+         console.log(response.project)
+         console.log(this.project)
       },
-      (error: any) => {
+      error:(error: any) => {
         console.error(error);
       }
-
+    });
 
       /* probaremos otro codigo por que con este no esta arrojando la informacion requerida
       {next:(response) => {
@@ -65,7 +66,7 @@ export class CreateComponent implements OnInit {
         
     }
     */
-    );
+    
   }
 
 }

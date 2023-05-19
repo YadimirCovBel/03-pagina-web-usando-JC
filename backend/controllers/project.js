@@ -25,7 +25,7 @@ var controller = {
 
         var params = req.body;
 
-    
+        
         project.name = params.name;
         project.description= params.description;
         project.categoty= params.categoty;
