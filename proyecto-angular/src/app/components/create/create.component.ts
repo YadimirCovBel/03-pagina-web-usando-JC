@@ -33,13 +33,31 @@ export class CreateComponent implements OnInit {
     
   }
   ngOnInit(): void {}
-  onSubmit(projectForm:NgForm){
+  onSubmit(form:NgForm){
     // probaremos con otra opcion si no lo volvemos a poner onSubmit(form:any){
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
+console.log(this.project);    
+this._projectService.saveProject(this.project).subscribe({
+         next:(response: any) => {
+          console.log(response);          
+            this.status = 'success';
+            form.reset();
     
-    this._projectService.saveProject(this.project).subscribe({
+      },
+      error:(error: any) => {
+        console.log(<any>error);
+        console.error(error);
+      },
+      complete() {
+        console.info('complete')
+        
+      },
+    });
+
+      /* 
+      el codigo no funciona no muestra en la consola los datos suscritos en el mongo
+       this._projectService.saveProject(this.project).subscribe({
          next:(response: any) => {
         this.status = 'success';
          console.log(response.project)
@@ -49,8 +67,9 @@ export class CreateComponent implements OnInit {
         console.error(error);
       }
     });
+    /////////////////////////////////////////////////////////////////////////////////////////////////
 
-      /* probaremos otro codigo por que con este no esta arrojando la informacion requerida
+      probaremos otro codigo por que con este no esta arrojando la informacion requerida
       {next:(response) => {
             if(response.project){
               this.status = "success";
