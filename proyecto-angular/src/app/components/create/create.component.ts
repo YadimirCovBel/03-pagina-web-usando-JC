@@ -88,7 +88,11 @@ this._projectService.saveProject(this.project).subscribe({
         
     }
     */
+ 
     
+  }
+  fileChangeEvent(fileInput:any){
+    console.log(fileInput)
   }
 
 }
