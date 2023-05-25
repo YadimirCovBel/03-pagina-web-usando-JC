@@ -5,12 +5,12 @@ import { NgForm } from '@angular/forms';
 ///////////////////////////////////////////////////////////////////////////////////////////////
 import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/services/project.service';
-
+import { UploadService } from 'src/app/services/upload.service';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.css'],
-  providers: [ProjectService]
+  providers: [ProjectService, UploadService]
 })
 export class CreateComponent implements OnInit {
 
@@ -18,7 +18,10 @@ export class CreateComponent implements OnInit {
   public project: Project;
   public status: string|undefined;
 
-   constructor(private _projectService: ProjectService){
+   constructor(
+    private _projectService: ProjectService,
+    private _uploadService: UploadService
+    ){
     this.title="Crear proyecto"
     this.project= new Project('','','','',2023,'','');
     this.status= "";
