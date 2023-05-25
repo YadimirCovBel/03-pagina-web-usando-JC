@@ -6,6 +6,7 @@ import { NgForm } from '@angular/forms';
 import { Project } from 'src/app/models/project';
 import { ProjectService } from 'src/app/services/project.service';
 import { UploadService } from 'src/app/services/upload.service';
+import { Global } from 'src/app/services/global';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
@@ -17,6 +18,7 @@ export class CreateComponent implements OnInit {
   public title: string;
   public project: Project;
   public status: string|undefined;
+  public filesToUpload: Array<File>;
 
    constructor(
     private _projectService: ProjectService,
@@ -41,10 +43,19 @@ export class CreateComponent implements OnInit {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
 console.log(this.project);    
+//guardar datos
 this._projectService.saveProject(this.project).subscribe({
          next:(response: any) => {
           console.log(response);          
             this.status = 'success';
+          //subir la imagen
+              this._uploadService.makeFileRequest(
+                Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
+                .then((result:any)=>{
+                  console.log(result)
+              });
+
+
             form.reset();
     
       },
@@ -92,7 +103,7 @@ this._projectService.saveProject(this.project).subscribe({
     
   }
   fileChangeEvent(fileInput:any){
-    console.log(fileInput)
+    this.filesToUpload = <Array<File>>fileInput.target.files;
   }
 
 }
