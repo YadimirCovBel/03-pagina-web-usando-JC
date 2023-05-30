@@ -18,6 +18,7 @@ export class CreateComponent implements OnInit {
   public title: string;
   public project: Project;
   public status: string|undefined;
+  //le agrego el undefined para ver si funciona dentro del
   public filesToUpload: Array<File>;
 
    constructor(
@@ -27,6 +28,8 @@ export class CreateComponent implements OnInit {
     this.title="Crear proyecto"
     this.project= new Project('','','','',2023,'','');
     this.status= "";
+    //se tubo que agregar el this.filesToUpload = [] para que funcionara el onSubmit
+    this.filesToUpload = [];
     /*
       public _id: string,
       public name: string,
@@ -47,16 +50,19 @@ console.log(this.project);
 this._projectService.saveProject(this.project).subscribe({
          next:(response: any) => {
           console.log(response);          
-            this.status = 'success';
+            
           //subir la imagen
               this._uploadService.makeFileRequest(
                 Global.url+"upload-image/"+response.project._id, [], this.filesToUpload, 'image')
                 .then((result:any)=>{
+                  
                   console.log(result)
+                  this.status = 'success';
+                  form.reset();
               });
 
 
-            form.reset();
+            
     
       },
       error:(error: any) => {
