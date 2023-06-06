@@ -27,4 +27,8 @@ export class ProjectService{
     /*retomamos de la clase 194 la estructura usuada en petitiones.services.ts dentro 
     del folder aprendiendo agular peticiones.services.ts 
     ya que en le curso nos dieron mal el content-type, headers*/
+    getProjects(): Observable<any>{
+        let headers = new HttpHeaders().set('Content-Type','aplication/json');
+        return this._http.get(this.url+'projects',{headers:headers});
+    }
 }
